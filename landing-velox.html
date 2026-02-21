@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="VELOX — The infrastructure layer for teams who ship fast. API-first SaaS platform. One API, all integrations, real-time everywhere.">
+    <title>VELOX — Ship Faster, Scale Smarter</title>
+    <link rel="canonical" href="https://syx.design/landing-velox.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://syx.design/landing-velox.html">
+    <meta property="og:title" content="VELOX — Ship Faster, Scale Smarter">
+    <meta property="og:description"
+        content="The infrastructure layer for teams who ship fast. API-first SaaS platform. One API, all integrations, real-time everywhere.">
+    <meta property="og:image" content="https://syx.design/assets/og-velox.png">
+    <meta property="og:site_name" content="VELOX by SYX">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="VELOX — Ship Faster, Scale Smarter">
+    <meta name="twitter:description"
+        content="The infrastructure layer for teams who ship fast. API-first SaaS platform.">
+    <meta name="twitter:image" content="https://syx.design/assets/og-velox.png">
+
+    <!-- VELOX: compiled from scss/styles-theme-velox.scss → themes/velox/setup.scss -->
+    <link rel="stylesheet" href="css/styles-theme-velox.css">
+
+    <!-- Google Fonts: Space Grotesk (heading) + Inter (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bridge: SYX font-family tokens → Google Fonts CDN -->
+    <style>
+        :root {
+            --primitive-font-family-velox-heading: "Space Grotesk", Arial, sans-serif;
+            --primitive-font-family-velox-body: "Inter", -apple-system, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="syx syx--theme-velox">
+
+    <!-- Skip navigation -->
+    <a href="#main-content" class="syx-skip-link">Skip to main content</a>
+
+    <!-- ============================================
+       NAVBAR
+  ============================================= -->
+    <nav class="org-landing-navbar" aria-label="Main navigation">
+        <div class="org-landing-navbar__bar layout-grid">
+            <!-- Logo -->
+            <a href="landing-velox.html" class="org-landing-navbar__logo layout-grid__col-xs-3 layout-grid__col-sm-2"
+                aria-label="VELOX home">
+                VELOX
+            </a>
+
+            <!-- Desktop links -->
+            <ul class="org-landing-navbar__links layout-grid__col-xs-6 layout-grid__col-sm-7" role="list">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Customers</a></li>
+                <li><a href="ds-system.html">Design System</a></li>
+            </ul>
+
+            <!-- Desktop CTA + hamburger -->
+            <div
+                class="org-landing-navbar__cta layout-grid__col-xs-3 layout-grid__col-sm-3 syx-d-flex syx-justify-end syx-items-center syx-gap-2">
+                <a href="#cta" class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-sm">
+                    Start Free
+                </a>
+                <button class="org-landing-navbar__toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="mobile-menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile drawer -->
+        <div class="org-landing-navbar__mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+            <nav class="org-landing-navbar__mobile-nav">
+                <a href="#features" class="org-landing-navbar__mobile-link">Features</a>
+                <a href="#pricing" class="org-landing-navbar__mobile-link">Pricing</a>
+                <a href="#testimonials" class="org-landing-navbar__mobile-link">Customers</a>
+                <a href="ds-system.html" class="org-landing-navbar__mobile-link">Design System</a>
+                <a href="#cta" class="org-landing-navbar__mobile-link org-landing-navbar__mobile-link--cta">Start Free
+                    →</a>
+            </nav>
+        </div>
+    </nav>
+
+
+    <!-- ============================================
+       MAIN CONTENT
+  ============================================= -->
+    <main id="main-content">
+
+        <!-- ============================================
+       HERO
+  ============================================= -->
+        <section class="org-landing-hero" aria-labelledby="hero-title">
+            <div class="org-landing-hero__inner layout-grid layout-grid--justify-center">
+
+                <div class="layout-grid__col-xs-12 layout-grid__col-md-8 syx-text-center">
+
+                    <div class="org-landing-hero__pill syx-d-inline-flex syx-items-center syx-gap-1" role="note">
+                        <span>⚡</span>
+                        <span class="syx-type-caption syx-font-medium">Now with AI-powered anomaly detection</span>
+                    </div>
+
+                    <h1 class="org-landing-hero__title syx-type-display-1 syx-mt-3" id="hero-title">
+                        Ship 10× faster.<br>
+                        <span class="org-landing-hero__accent">Zero compromise.</span>
+                    </h1>
+
+                    <p class="org-landing-hero__lead syx-type-body-large syx-mt-3 syx-max-w-65ch syx-mx-auto">
+                        VELOX is the infrastructure layer for engineering teams who move fast without breaking things.
+                        One
+                        API. All integrations. Real-time everywhere.
+                    </p>
+
+                    <div
+                        class="org-landing-hero__actions syx-d-flex syx-justify-center syx-items-center syx-gap-3 syx-mt-4 syx-flex-wrap">
+                        <a href="#cta" class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-lg">
+                            Start Building Free
+                        </a>
+                        <a href="#features" class="atom-btn atom-btn--size-lg org-landing-hero__btn-ghost">
+                            See How It Works
+                        </a>
+                    </div>
+
+                    <div
+                        class="org-landing-hero__social syx-d-flex syx-justify-center syx-items-center syx-gap-2 syx-mt-4 syx-flex-wrap">
+                        <div class="org-landing-hero__avatars" aria-label="Customer avatars">
+                            <span aria-hidden="true">J</span>
+                            <span aria-hidden="true">M</span>
+                            <span aria-hidden="true">A</span>
+                            <span aria-hidden="true">L</span>
+                            <span aria-hidden="true">+</span>
+                        </div>
+                        <span class="org-landing-hero__stars" aria-label="5 star rating">★★★★★</span>
+                        <span class="syx-type-body-small syx-text-gray">Trusted by <strong
+                                class="syx-font-bold">2,400+</strong> engineering teams</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       STATS BAR
+  ============================================= -->
+        <section class="org-landing-stats" aria-label="Key metrics">
+            <dl class="org-landing-stats__grid">
+                <div class="org-landing-stats__item syx-text-center">
+                    <dt class="org-landing-stats__label syx-type-caption syx-text-muted">API Uptime</dt>
+                    <dd class="org-landing-stats__number syx-type-h2 syx-font-bold syx-m-0">99.97%</dd>
+                </div>
+                <div class="org-landing-stats__item syx-text-center">
+                    <dt class="org-landing-stats__label syx-type-caption syx-text-muted">Response time</dt>
+                    <dd class="org-landing-stats__number syx-type-h2 syx-font-bold syx-m-0">&lt;12ms</dd>
+                </div>
+                <div class="org-landing-stats__item syx-text-center">
+                    <dt class="org-landing-stats__label syx-type-caption syx-text-muted">Events / day</dt>
+                    <dd class="org-landing-stats__number syx-type-h2 syx-font-bold syx-m-0">4B+</dd>
+                </div>
+                <div class="org-landing-stats__item syx-text-center">
+                    <dt class="org-landing-stats__label syx-type-caption syx-text-muted">Active teams</dt>
+                    <dd class="org-landing-stats__number syx-type-h2 syx-font-bold syx-m-0">2,400+</dd>
+                </div>
+            </dl>
+        </section>
+
+
+        <!-- ============================================
+       FEATURES
+  ============================================= -->
+        <section class="org-landing-features" id="features" aria-labelledby="features-title">
+            <div class="org-landing-features__inner">
+
+                <!-- Section header -->
+                <div class="org-landing-section-head">
+                    <div class="org-landing-section-tag">Platform</div>
+                    <h2 class="org-landing-section-title" id="features-title">
+                        Everything your stack needs. Nothing it doesn&rsquo;t.
+                    </h2>
+                    <p class="org-landing-section-lead">
+                        One unified API across auth, messaging, storage, and analytics &mdash; with strict SLAs and zero
+                        vendor lock-in.
+                    </p>
+                </div>
+
+                <!-- Feature cards: 1-col mobile → 2-col tablet → 3-col desktop -->
+                <div class="org-landing-features__grid">
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">⚡</div>
+                        <h3 class="mol-landing-feature-card__title">Edge-First API</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            Deployed globally across 38 PoPs. Every request hits the closest node &mdash; sub-10ms
+                            latency
+                            for 98% of traffic.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">🔒</div>
+                        <h3 class="mol-landing-feature-card__title">Zero-Trust Auth</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            SAML, OIDC, and MFA baked in. Granular RBAC with audit logs &mdash; SOC 2 Type II and ISO
+                            27001
+                            certified.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">📡</div>
+                        <h3 class="mol-landing-feature-card__title">Real-Time Events</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            WebSocket + Server-Sent Events out of the box. Handles 4B+ events per day without breaking a
+                            sweat.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">📊</div>
+                        <h3 class="mol-landing-feature-card__title">Unified Analytics</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            Product, performance, and business metrics in one pipeline &mdash; with pre-built dashboards
+                            and
+                            custom SQL.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">🤖</div>
+                        <h3 class="mol-landing-feature-card__title">AI Anomaly Detection</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            ML-powered alerts catch incidents before they reach customers. Configure thresholds in
+                            minutes.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">🔌</div>
+                        <h3 class="mol-landing-feature-card__title">250+ Integrations</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            Slack, GitHub, Datadog, PagerDuty, Stripe &mdash; connect your existing stack without
+                            rewriting
+                            any code.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       PRICING
+  ============================================= -->
+        <section class="org-landing-pricing" id="pricing" aria-labelledby="pricing-title">
+            <div class="org-landing-pricing__inner">
+
+                <!-- Section header -->
+                <div class="org-landing-section-head">
+                    <div class="org-landing-section-tag">Pricing</div>
+                    <h2 class="org-landing-section-title" id="pricing-title">Simple, transparent pricing</h2>
+                    <p class="org-landing-section-lead">Start free. Scale as you grow. No surprise charges.</p>
+                </div>
+
+                <!-- Pricing grid: 1-col mobile → 3-col desktop -->
+                <div class="org-landing-pricing__grid">
+
+                    <article class="mol-landing-plan">
+                        <p class="mol-landing-plan__name">Starter</p>
+                        <p class="mol-landing-plan__price">$0 <span>/ month</span></p>
+                        <p class="mol-landing-plan__desc">Perfect for side projects and small teams getting started.</p>
+                        <ul class="mol-landing-plan__features">
+                            <li>50K API calls / month</li>
+                            <li>3 team members</li>
+                            <li>Community support</li>
+                            <li>Basic analytics</li>
+                        </ul>
+                        <a href="#cta" class="atom-btn atom-btn--primary atom-btn--size-md syx-w-full">Get Started</a>
+                    </article>
+
+                    <article class="mol-landing-plan mol-landing-plan--featured">
+                        <div class="mol-landing-plan__badge">Most Popular</div>
+                        <p class="mol-landing-plan__name">Pro</p>
+                        <p class="mol-landing-plan__price">$79 <span>/ month</span></p>
+                        <p class="mol-landing-plan__desc">For growing teams that need reliability and advanced tooling.
+                        </p>
+                        <ul class="mol-landing-plan__features">
+                            <li>5M API calls / month</li>
+                            <li>25 team members</li>
+                            <li>Priority support (4h SLA)</li>
+                            <li>Full analytics + alerting</li>
+                            <li>AI anomaly detection</li>
+                        </ul>
+                        <a href="#cta"
+                            class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-md syx-w-full">Start Pro
+                            Trial</a>
+                    </article>
+
+                    <article class="mol-landing-plan">
+                        <p class="mol-landing-plan__name">Enterprise</p>
+                        <p class="mol-landing-plan__price">Custom</p>
+                        <p class="mol-landing-plan__desc">Custom SLAs, dedicated infra, and white-glove onboarding.</p>
+                        <ul class="mol-landing-plan__features">
+                            <li>Unlimited API calls</li>
+                            <li>Unlimited members</li>
+                            <li>24/7 dedicated support</li>
+                            <li>SOC 2 / HIPAA compliance</li>
+                            <li>SSO + custom RBAC</li>
+                        </ul>
+                        <a href="#cta" class="atom-btn atom-btn--secondary atom-btn--size-md syx-w-full">Talk to
+                            Sales</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       TESTIMONIALS
+  ============================================= -->
+        <section class="org-landing-testimonials" id="testimonials" aria-labelledby="testimonials-title">
+            <div class="org-landing-testimonials__inner">
+
+                <!-- Section header -->
+                <div class="org-landing-section-head">
+                    <div class="org-landing-section-tag">Customers</div>
+                    <h2 class="org-landing-section-title" id="testimonials-title">Loved by engineering teams</h2>
+                </div>
+
+                <!-- Testimonial cards: 1-col mobile → 3-col tablet+ -->
+                <div class="org-landing-testimonials__grid">
+
+                    <blockquote class="mol-landing-testimonial">
+                        <div class="mol-landing-testimonial__stars" aria-label="5 stars">★★★★★</div>
+                        <p class="mol-landing-testimonial__body">
+                            &ldquo;We cut our infrastructure cost by 40% and incident count by 80% in the first quarter.
+                            VELOX&rsquo;s anomaly detection found issues we didn&rsquo;t even know we had.&rdquo;
+                        </p>
+                        <div class="mol-landing-testimonial__author">
+                            <div class="mol-landing-testimonial__avatar" aria-hidden="true">JR</div>
+                            <div>
+                                <div class="mol-landing-testimonial__name">James R.</div>
+                                <div class="mol-landing-testimonial__role">CTO, Gridline</div>
+                            </div>
+                        </div>
+                    </blockquote>
+
+                    <blockquote class="mol-landing-testimonial">
+                        <div class="mol-landing-testimonial__stars" aria-label="5 stars">★★★★★</div>
+                        <p class="mol-landing-testimonial__body">
+                            &ldquo;The real-time event system handles our peak Black Friday load without any config
+                            changes.
+                            It just works &mdash; every time.&rdquo;
+                        </p>
+                        <div class="mol-landing-testimonial__author">
+                            <div class="mol-landing-testimonial__avatar" aria-hidden="true">MC</div>
+                            <div>
+                                <div class="mol-landing-testimonial__name">Maria C.</div>
+                                <div class="mol-landing-testimonial__role">Lead Eng., Paylens</div>
+                            </div>
+                        </div>
+                    </blockquote>
+
+                    <blockquote class="mol-landing-testimonial">
+                        <div class="mol-landing-testimonial__stars" aria-label="5 stars">★★★★★</div>
+                        <p class="mol-landing-testimonial__body">
+                            &ldquo;Onboarding took less than a day. Within a week we had decommissioned three separate
+                            services. The DX is just exceptional.&rdquo;
+                        </p>
+                        <div class="mol-landing-testimonial__author">
+                            <div class="mol-landing-testimonial__avatar" aria-hidden="true">AK</div>
+                            <div>
+                                <div class="mol-landing-testimonial__name">Alex K.</div>
+                                <div class="mol-landing-testimonial__role">Staff Eng., Orbit</div>
+                            </div>
+                        </div>
+                    </blockquote>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       CTA BAND
+  ============================================= -->
+        <section class="org-landing-cta helper-bg-color-primary" id="cta" aria-labelledby="cta-title">
+            <div class="org-landing-cta__inner layout-grid layout-grid--justify-center">
+                <div class="layout-grid__col-xs-12 syx-text-center">
+                    <h2 class="org-landing-cta__title syx-type-h2" id="cta-title">
+                        Ready to ship at velocity?
+                    </h2>
+                    <p class="org-landing-cta__lead syx-type-body-large syx-mt-3">
+                        Join 2,400+ teams already running on VELOX. Set up in 15 minutes &mdash; no credit card
+                        required.
+                    </p>
+                    <div
+                        class="org-landing-cta__actions syx-d-flex syx-justify-center syx-items-center syx-gap-3 syx-mt-4 syx-flex-wrap">
+                        <a href="#" class="atom-btn atom-btn--secondary atom-btn--filled atom-btn--size-md">
+                            Start Free Now
+                        </a>
+                        <a href="#" class="atom-btn atom-btn--secondary atom-btn--size-md">
+                            Schedule a Demo
+                        </a>
+                    </div>
+                    <p class="org-landing-cta__sub syx-type-body-small syx-mt-3">No credit card. Cancel anytime. SOC 2
+                        compliant.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       FOOTER
+  ============================================= -->
+        <footer class="org-landing-footer" role="contentinfo">
+            <div class="org-landing-footer__inner">
+
+                <div
+                    class="org-landing-footer__brand layout-grid__col-xs-12 layout-grid__col-sm-6 layout-grid__col-md-3">
+                    <div class="org-landing-footer__brand-name syx-type-h4 syx-font-bold syx-text-primary">VELOX</div>
+                    <p class="org-landing-footer__tagline syx-type-body-small syx-text-muted syx-mt-2">
+                        The infrastructure layer for teams who ship fast.
+                    </p>
+                </div>
+
+                <div class="layout-grid__col-xs-12 layout-grid__col-sm-6 layout-grid__col-md-3">
+                    <h3 class="org-landing-footer__col-title syx-type-overline syx-mb-2">Product</h3>
+                    <ul class="org-landing-footer__links syx-type-body-small" role="list">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Changelog</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="layout-grid__col-xs-12 layout-grid__col-sm-6 layout-grid__col-md-3">
+                    <h3 class="org-landing-footer__col-title syx-type-overline syx-mb-2">Developers</h3>
+                    <ul class="org-landing-footer__links syx-type-body-small" role="list">
+                        <li><a href="#">API Docs</a></li>
+                        <li><a href="#">SDKs</a></li>
+                        <li><a href="#">Status Page</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="layout-grid__col-xs-12 layout-grid__col-sm-6 layout-grid__col-md-3">
+                    <h3 class="org-landing-footer__col-title syx-type-overline syx-mb-2">Company</h3>
+                    <ul class="org-landing-footer__links syx-type-body-small" role="list">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="org-landing-footer__copy syx-type-caption syx-text-muted">
+                &copy; 2025 VELOX Inc. &mdash; SYX Design System dual-brand exercise
+                &nbsp;|&nbsp;
+                <a href="landing-terra.html" class="atom-link">Switch to TERRA →</a>
+            </p>
+        </footer>
+
+    </main><!-- /#main-content -->
+
+    <!-- Hamburger script — minimal, no library needed -->
+    <script>
+        (function () {
+            var toggle = document.querySelector('.org-landing-navbar__toggle');
+            var menu = document.querySelector('.org-landing-navbar__mobile-menu');
+            if (!toggle || !menu) return;
+            toggle.addEventListener('click', function () {
+                var open = menu.classList.toggle('is-open');
+                toggle.setAttribute('aria-expanded', open);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

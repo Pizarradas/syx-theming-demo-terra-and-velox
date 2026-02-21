@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TERRA — Sustainable foodtech that connects local farms to conscious consumers with zero waste.">
+    <title>TERRA — Rooted in Nature, Delivered with Care</title>
+    <link rel="canonical" href="https://syx.design/landing-terra.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://syx.design/landing-terra.html">
+    <meta property="og:title" content="TERRA — Rooted in Nature, Delivered with Care">
+    <meta property="og:description"
+        content="Sustainable foodtech connecting local farms to conscious consumers. Seasonal boxes, zero-waste packaging, fair farm premium.">
+    <meta property="og:image" content="https://syx.design/assets/og-terra.png">
+    <meta property="og:site_name" content="TERRA by SYX">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TERRA — Rooted in Nature, Delivered with Care">
+    <meta name="twitter:description"
+        content="Sustainable foodtech connecting local farms to conscious consumers. Zero waste, fair trade.">
+    <meta name="twitter:image" content="https://syx.design/assets/og-terra.png">
+
+    <!-- TERRA: compiled from scss/styles-theme-terra.scss → themes/terra/setup.scss -->
+    <link rel="stylesheet" href="css/styles-theme-terra.css">
+
+    <!-- Google Fonts: Lora (heading) + Source Sans 3 (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bridge: SYX font-family tokens → Google Fonts CDN -->
+    <style>
+        :root {
+            --primitive-font-family-terra-heading: "Lora", Georgia, serif;
+            --primitive-font-family-terra-body: "Source Sans 3", system-ui, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="syx syx--theme-terra">
+
+    <!-- Skip navigation -->
+    <a href="#main-content" class="syx-skip-link">Skip to main content</a>
+
+    <!-- ============================================
+       NAVBAR
+  ============================================= -->
+    <nav class="org-landing-navbar" aria-label="Main navigation">
+        <div class="org-landing-navbar__bar layout-grid">
+            <!-- Logo -->
+            <a href="landing-terra.html" class="org-landing-navbar__logo layout-grid__col-xs-3 layout-grid__col-sm-2"
+                aria-label="TERRA home">
+                TERRA
+            </a>
+
+            <!-- Desktop links -->
+            <ul class="org-landing-navbar__links layout-grid__col-xs-6 layout-grid__col-sm-7" role="list">
+                <li><a href="#features">Our Approach</a></li>
+                <li><a href="#pricing">Plans</a></li>
+                <li><a href="#testimonials">Stories</a></li>
+                <li><a href="ds-system.html">Design System</a></li>
+            </ul>
+
+            <!-- Desktop CTA + hamburger -->
+            <div
+                class="org-landing-navbar__cta layout-grid__col-xs-3 layout-grid__col-sm-3 syx-d-flex syx-justify-end syx-items-center syx-gap-2">
+                <a href="#cta" class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-sm">
+                    Join the Harvest
+                </a>
+                <button class="org-landing-navbar__toggle" aria-label="Open menu" aria-expanded="false"
+                    aria-controls="mobile-menu-terra">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile drawer -->
+        <div class="org-landing-navbar__mobile-menu" id="mobile-menu-terra" role="navigation"
+            aria-label="Mobile navigation">
+            <nav class="org-landing-navbar__mobile-nav">
+                <a href="#features" class="org-landing-navbar__mobile-link">Our Approach</a>
+                <a href="#pricing" class="org-landing-navbar__mobile-link">Plans</a>
+                <a href="#testimonials" class="org-landing-navbar__mobile-link">Stories</a>
+                <a href="ds-system.html" class="org-landing-navbar__mobile-link">Design System</a>
+                <a href="#cta" class="org-landing-navbar__mobile-link org-landing-navbar__mobile-link--cta">Join the
+                    Harvest →</a>
+            </nav>
+        </div>
+    </nav>
+
+
+    <!-- ============================================
+       MAIN CONTENT
+  ============================================= -->
+    <main id="main-content">
+
+        <!-- ============================================
+       HERO
+  ============================================= -->
+        <section class="org-landing-hero" aria-labelledby="hero-title-terra">
+            <div class="org-landing-hero__inner layout-grid layout-grid--justify-center">
+
+                <div class="layout-grid__col-xs-12 layout-grid__col-md-8 syx-text-center">
+
+                    <div class="org-landing-hero__pill syx-d-inline-flex syx-items-center syx-gap-1" role="note">
+                        <span>🌿</span>
+                        <span class="syx-type-caption syx-font-medium">Now delivering in 48 cities across Europe</span>
+                    </div>
+
+                    <h1 class="org-landing-hero__title syx-type-display-1 syx-mt-3" id="hero-title-terra">
+                        From field to fork in<br>
+                        <span class="org-landing-hero__accent">24 hours, always.</span>
+                    </h1>
+
+                    <p class="org-landing-hero__lead syx-type-body-large syx-mt-3 syx-max-w-65ch syx-mx-auto">
+                        TERRA connects small sustainable farms directly to conscious households &mdash; cutting food
+                        miles,
+                        eliminating waste, and ensuring farmers get paid fairly. Every single box.
+                    </p>
+
+                    <div
+                        class="org-landing-hero__actions syx-d-flex syx-justify-center syx-items-center syx-gap-3 syx-mt-4 syx-flex-wrap">
+                        <a href="#cta" class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-lg">
+                            Start My First Box
+                        </a>
+                        <a href="#features" class="atom-btn atom-btn--size-lg org-landing-hero__btn-ghost">
+                            How It Works
+                        </a>
+                    </div>
+
+                    <div
+                        class="org-landing-hero__social syx-d-flex syx-justify-center syx-items-center syx-gap-2 syx-mt-4 syx-flex-wrap">
+                        <div class="org-landing-hero__avatars" aria-label="Customer avatars">
+                            <span aria-hidden="true">S</span>
+                            <span aria-hidden="true">E</span>
+                            <span aria-hidden="true">P</span>
+                            <span aria-hidden="true">R</span>
+                            <span aria-hidden="true">+</span>
+                        </div>
+                        <span class="org-landing-hero__stars" aria-label="5 star rating">★★★★★</span>
+                        <span class="syx-type-body-small syx-text-gray">Loved by <strong
+                                class="syx-font-bold">38,000+</strong> households</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       STATS BAR
+  ============================================= -->
+        <section class="org-landing-stats" aria-label="Key metrics">
+            <dl class="org-landing-stats__grid">
+                <div class="org-landing-stats__item syx-text-center">
+                    <dt class="org-landing-stats__label syx-type-caption syx-text-muted">Partner farms</dt>
+                    <dd class="org-landing-stats__number syx-type-h2 syx-font-bold syx-m-0">320+</dd>
+                </div>
+                <div class="org-landing-stats__item syx-text-center">
+                    <dt class="org-landing-stats__label syx-type-caption syx-text-muted">Food waste avoided</dt>
+                    <dd class="org-landing-stats__number syx-type-h2 syx-font-bold syx-m-0">98%</dd>
+                </div>
+                <div class="org-landing-stats__item syx-text-center">
+                    <dt class="org-landing-stats__label syx-type-caption syx-text-muted">Avg. farm premium</dt>
+                    <dd class="org-landing-stats__number syx-type-h2 syx-font-bold syx-m-0">+34%</dd>
+                </div>
+                <div class="org-landing-stats__item syx-text-center">
+                    <dt class="org-landing-stats__label syx-type-caption syx-text-muted">Happy households</dt>
+                    <dd class="org-landing-stats__number syx-type-h2 syx-font-bold syx-m-0">38K+</dd>
+                </div>
+            </dl>
+        </section>
+
+
+        <!-- ============================================
+       FEATURES / APPROACH
+  ============================================= -->
+        <section class="org-landing-features" id="features" aria-labelledby="features-title-terra">
+            <div class="org-landing-features__inner">
+
+                <!-- Section header -->
+                <div class="org-landing-section-head">
+                    <div class="org-landing-section-tag">Our Approach</div>
+                    <h2 class="org-landing-section-title" id="features-title-terra">
+                        A better food system, built from the ground up
+                    </h2>
+                    <p class="org-landing-section-lead">
+                        Every decision we make starts with a simple question: is this good for the planet, the farmer,
+                        and you?
+                    </p>
+                </div>
+
+                <!-- Feature cards: 1-col mobile → 2-col tablet → 3-col desktop -->
+                <div class="org-landing-features__grid">
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">🌾</div>
+                        <h3 class="mol-landing-feature-card__title">Verified Local Farms</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            All 320+ partner farms are within 150km of your city. Every farmer is verified in person
+                            &mdash;
+                            no industrial producers, ever.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">📦</div>
+                        <h3 class="mol-landing-feature-card__title">Zero-Waste Packaging</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            100% compostable boxes, reusable glass jars, and a return scheme with 94% participation.
+                            Packaging you&rsquo;re proud to receive.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">💚</div>
+                        <h3 class="mol-landing-feature-card__title">Fair Farm Premium</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            Farmers keep 78% of each sale &mdash; vs. 42% in conventional retail. We believe the people
+                            who
+                            feed us should earn a living wage.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">🗓️</div>
+                        <h3 class="mol-landing-feature-card__title">Flexible Subscriptions</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            Weekly, fortnightly, or monthly &mdash; with full customisation. Pause, skip, or cancel
+                            anytime
+                            with a single tap.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">🍲</div>
+                        <h3 class="mol-landing-feature-card__title">Seasonal Recipe Cards</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            Every box includes chef-designed recipe cards using exactly what&rsquo;s in your delivery
+                            &mdash; inspiration, not obligation.
+                        </p>
+                    </article>
+
+                    <article class="mol-landing-feature-card">
+                        <div class="mol-landing-feature-card__icon" aria-hidden="true">🌍</div>
+                        <h3 class="mol-landing-feature-card__title">Carbon-Neutral Delivery</h3>
+                        <p class="mol-landing-feature-card__desc">
+                            Our last-mile fleet is 100% electric. We offset the remaining emissions through
+                            reforestation
+                            projects with certified partners.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       PRICING
+  ============================================= -->
+        <section class="org-landing-pricing" id="pricing" aria-labelledby="pricing-title-terra">
+            <div class="org-landing-pricing__inner">
+
+                <!-- Section header -->
+                <div class="org-landing-section-head">
+                    <div class="org-landing-section-tag">Box Plans</div>
+                    <h2 class="org-landing-section-title" id="pricing-title-terra">Find your perfect harvest</h2>
+                    <p class="org-landing-section-lead">All plans include free delivery and a freshness guarantee.</p>
+                </div>
+
+                <!-- Pricing grid -->
+                <div class="org-landing-pricing__grid">
+
+                    <article class="mol-landing-plan">
+                        <p class="mol-landing-plan__name">Solo</p>
+                        <p class="mol-landing-plan__price">&euro;24 <span>/ week</span></p>
+                        <p class="mol-landing-plan__desc">A carefully curated box for one or two people &mdash;
+                            6&ndash;8
+                            seasonal items.</p>
+                        <ul class="mol-landing-plan__features">
+                            <li>6&ndash;8 seasonal items</li>
+                            <li>Recipe card included</li>
+                            <li>Skip any week</li>
+                            <li>Free delivery</li>
+                        </ul>
+                        <a href="#cta" class="atom-btn atom-btn--primary atom-btn--size-md syx-w-full">Choose Solo</a>
+                    </article>
+
+                    <article class="mol-landing-plan mol-landing-plan--featured">
+                        <div class="mol-landing-plan__badge">Best for families</div>
+                        <p class="mol-landing-plan__name">Family</p>
+                        <p class="mol-landing-plan__price">&euro;49 <span>/ week</span></p>
+                        <p class="mol-landing-plan__desc">A generous box for 3&ndash;5 people &mdash; 12&ndash;14 items,
+                            full variety, great savings.</p>
+                        <ul class="mol-landing-plan__features">
+                            <li>12&ndash;14 seasonal items</li>
+                            <li>3 recipe cards</li>
+                            <li>Customise preferences</li>
+                            <li>Priority fresh slots</li>
+                            <li>Free weekly delivery</li>
+                        </ul>
+                        <a href="#cta"
+                            class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-md syx-w-full">Choose
+                            Family</a>
+                    </article>
+
+                    <article class="mol-landing-plan">
+                        <p class="mol-landing-plan__name">Community</p>
+                        <p class="mol-landing-plan__price">&euro;99 <span>/ week</span></p>
+                        <p class="mol-landing-plan__desc">For restaurants, co-ops, and offices. Direct farm relationship
+                            and
+                            account manager.</p>
+                        <ul class="mol-landing-plan__features">
+                            <li>25+ seasonal items</li>
+                            <li>Custom selections</li>
+                            <li>Dedicated account manager</li>
+                            <li>Farm visit included</li>
+                            <li>Invoice billing</li>
+                        </ul>
+                        <a href="#cta" class="atom-btn atom-btn--secondary atom-btn--size-md syx-w-full">Talk to Us</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       TESTIMONIALS
+  ============================================= -->
+        <section class="org-landing-testimonials" id="testimonials" aria-labelledby="testimonials-title-terra">
+            <div class="org-landing-testimonials__inner">
+
+                <!-- Section header -->
+                <div class="org-landing-section-head">
+                    <div class="org-landing-section-tag">Stories</div>
+                    <h2 class="org-landing-section-title" id="testimonials-title-terra">What our community says</h2>
+                </div>
+
+                <!-- Testimonial cards: 1-col mobile → 3-col tablet+ -->
+                <div class="org-landing-testimonials__grid">
+
+                    <blockquote class="mol-landing-testimonial">
+                        <div class="mol-landing-testimonial__stars" aria-label="5 stars">★★★★★</div>
+                        <p class="mol-landing-testimonial__body">
+                            &ldquo;I&rsquo;ve tried every food box out there. TERRA is the only one where you can
+                            actually
+                            taste the difference &mdash; the strawberries are like nothing from a supermarket.&rdquo;
+                        </p>
+                        <div class="mol-landing-testimonial__author">
+                            <div class="mol-landing-testimonial__avatar" aria-hidden="true">SP</div>
+                            <div>
+                                <div class="mol-landing-testimonial__name">Sophie P.</div>
+                                <div class="mol-landing-testimonial__role">Customer, Paris</div>
+                            </div>
+                        </div>
+                    </blockquote>
+
+                    <blockquote class="mol-landing-testimonial">
+                        <div class="mol-landing-testimonial__stars" aria-label="5 stars">★★★★★</div>
+                        <p class="mol-landing-testimonial__body">
+                            &ldquo;As a chef, provenance matters. TERRA let me visit the farms myself and build a
+                            sourcing
+                            relationship that&rsquo;s completely transparent. My diners love it.&rdquo;
+                        </p>
+                        <div class="mol-landing-testimonial__author">
+                            <div class="mol-landing-testimonial__avatar" aria-hidden="true">EM</div>
+                            <div>
+                                <div class="mol-landing-testimonial__name">Emilio M.</div>
+                                <div class="mol-landing-testimonial__role">Head Chef, Ola Verde</div>
+                            </div>
+                        </div>
+                    </blockquote>
+
+                    <blockquote class="mol-landing-testimonial">
+                        <div class="mol-landing-testimonial__stars" aria-label="5 stars">★★★★★</div>
+                        <p class="mol-landing-testimonial__body">
+                            &ldquo;Since switching to TERRA, my kids actually get excited when the box arrives.
+                            That&rsquo;s
+                            something I never thought possible with vegetables.&rdquo;
+                        </p>
+                        <div class="mol-landing-testimonial__author">
+                            <div class="mol-landing-testimonial__avatar" aria-hidden="true">RL</div>
+                            <div>
+                                <div class="mol-landing-testimonial__name">Rosa L.</div>
+                                <div class="mol-landing-testimonial__role">Customer, Barcelona</div>
+                            </div>
+                        </div>
+                    </blockquote>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       CTA BAND
+  ============================================= -->
+        <section class="org-landing-cta helper-bg-color-primary" id="cta" aria-labelledby="cta-title-terra">
+            <div class="org-landing-cta__inner layout-grid layout-grid--justify-center">
+                <div class="layout-grid__col-xs-12 syx-text-center">
+                    <h2 class="org-landing-cta__title syx-type-h2" id="cta-title-terra">
+                        Reconnect with real food.
+                    </h2>
+                    <p class="org-landing-cta__lead syx-type-body-large syx-mt-3">
+                        Your first box is ready to pick. Choose your plan, tell us your preferences, and we&rsquo;ll do
+                        the
+                        rest.
+                    </p>
+                    <div
+                        class="org-landing-cta__actions syx-d-flex syx-justify-center syx-items-center syx-gap-3 syx-mt-4 syx-flex-wrap">
+                        <a href="#" class="atom-btn atom-btn--secondary atom-btn--filled atom-btn--size-md">
+                            Start Free Now
+                        </a>
+                        <a href="#" class="atom-btn atom-btn--secondary atom-btn--size-md">
+                            Schedule a Demo
+                        </a>
+                    </div>
+                    <p class="org-landing-cta__sub syx-type-body-small syx-mt-3">Free delivery on your first order.
+                        Freshness guaranteed.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================
+       FOOTER
+  ============================================= -->
+        <footer class="org-landing-footer" role="contentinfo">
+            <div class="org-landing-footer__inner">
+
+                <div
+                    class="org-landing-footer__brand layout-grid__col-xs-12 layout-grid__col-sm-6 layout-grid__col-md-3">
+                    <div class="org-landing-footer__brand-name syx-type-h4 syx-font-bold syx-text-primary">TERRA</div>
+                    <p class="org-landing-footer__tagline syx-type-body-small syx-text-muted syx-mt-2">
+                        Rooted in nature, delivered with care.
+                    </p>
+                </div>
+
+                <div class="layout-grid__col-xs-12 layout-grid__col-sm-6 layout-grid__col-md-3">
+                    <h3 class="org-landing-footer__col-title syx-type-overline syx-mb-2">Shop</h3>
+                    <ul class="org-landing-footer__links syx-type-body-small" role="list">
+                        <li><a href="#">Box Plans</a></li>
+                        <li><a href="#">Seasonal Guide</a></li>
+                        <li><a href="#">Gift Boxes</a></li>
+                        <li><a href="#">Refer a Friend</a></li>
+                    </ul>
+                </div>
+
+                <div class="layout-grid__col-xs-12 layout-grid__col-sm-6 layout-grid__col-md-3">
+                    <h3 class="org-landing-footer__col-title syx-type-overline syx-mb-2">Our Mission</h3>
+                    <ul class="org-landing-footer__links syx-type-body-small" role="list">
+                        <li><a href="#">Our Farms</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Fair Pay Pledge</a></li>
+                        <li><a href="#">B-Corp Journey</a></li>
+                    </ul>
+                </div>
+
+                <div class="layout-grid__col-xs-12 layout-grid__col-sm-6 layout-grid__col-md-3">
+                    <h3 class="org-landing-footer__col-title syx-type-overline syx-mb-2">Help</h3>
+                    <ul class="org-landing-footer__links syx-type-body-small" role="list">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Delivery Info</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="org-landing-footer__copy syx-type-caption syx-text-muted">
+                &copy; 2025 TERRA Foods Ltd. &mdash; SYX Design System dual-brand exercise
+                &nbsp;|&nbsp;
+                <a href="landing-velox.html" class="atom-link">Switch to VELOX →</a>
+            </p>
+        </footer>
+
+    </main><!-- /#main-content -->
+
+
+    <!-- Hamburger script -->
+    <script>
+        (function () {
+            var toggle = document.querySelector('.org-landing-navbar__toggle');
+            var menu = document.querySelector('.org-landing-navbar__mobile-menu');
+            if (!toggle || !menu) return;
+            toggle.addEventListener('click', function () {
+                var open = menu.classList.toggle('is-open');
+                toggle.setAttribute('aria-expanded', open);
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

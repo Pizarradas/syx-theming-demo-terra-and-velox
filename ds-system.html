@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="SYX Dual-Brand Design System Showcase — VELOX and TERRA component library, tokens, typography, and organisms.">
+  <title>SYX — Dual Brand Design System</title>
+  <link rel="canonical" href="https://syx.design/ds-system.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://syx.design/ds-system.html">
+  <meta property="og:title" content="SYX — Dual Brand Design System">
+  <meta property="og:description"
+    content="VELOX and TERRA component library. Tokens, typography, organisms and molecules in a live dual-brand showcase.">
+  <meta property="og:image" content="https://syx.design/assets/og-syx-ds.png">
+  <meta property="og:site_name" content="SYX Design System">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SYX — Dual Brand Design System">
+  <meta name="twitter:description" content="VELOX and TERRA live component showcase with design tokens and organisms.">
+  <meta name="twitter:image" content="https://syx.design/assets/og-syx-ds.png">
+
+  <!-- VELOX default: compiled from scss/styles-theme-velox.scss -->
+  <link rel="stylesheet" href="css/styles-theme-velox.css" id="syx-brand-stylesheet">
+
+  <!-- Google Fonts: Space Grotesk + Inter (VELOX) / Lora + Source Sans 3 (TERRA) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:ital,wght@0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;700&family=Space+Grotesk:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font bridge — override based on active brand class -->
+  <style>
+    body.brand--velox {
+      --primitive-font-family-velox-heading: "Space Grotesk", Arial, sans-serif;
+      --primitive-font-family-velox-body: "Inter", -apple-system, sans-serif;
+    }
+
+    body.brand--terra {
+      --primitive-font-family-terra-heading: "Lora", Georgia, serif;
+      --primitive-font-family-terra-body: "Source Sans 3", system-ui, sans-serif;
+    }
+
+    /* local container — max-width + horizontal padding */
+    .ds-container {
+      max-width: var(--component-landing-container-max, 75rem);
+      margin-inline: auto;
+      padding-inline: var(--component-landing-section-padding-x, clamp(1rem, 5vw, 4rem));
+    }
+  </style>
+</head>
+
+<!-- body class starts as velox; JS toggles between syx--theme-velox / syx--theme-terra -->
+
+<body class="syx syx--theme-velox brand--velox">
+
+  <!-- Skip navigation -->
+  <a href="#main-content" class="syx-skip-link">Skip to main content</a>
+
+  <!-- ============================================
+       DS BAR — sticky brand switcher
+  ============================================= -->
+  <header class="org-ds-bar" role="banner">
+    <div class="org-ds-bar__inner">
+      <a href="index.html" class="org-ds-bar__logo">
+        SYX <span>Design System</span>
+      </a>
+
+      <div class="org-ds-bar__switcher" role="group" aria-label="Brand switcher">
+        <span class="org-ds-bar__label">Active brand:</span>
+        <button class="org-ds-bar__btn is-active" id="btn-velox" data-brand="velox"
+          data-css="css/styles-theme-velox.css">
+          <span class="org-ds-bar__btn-dot" aria-hidden="true"></span>
+          VELOX
+        </button>
+        <button class="org-ds-bar__btn" id="btn-terra" data-brand="terra" data-css="css/styles-theme-terra.css">
+          <span class="org-ds-bar__btn-dot" aria-hidden="true"></span>
+          TERRA
+        </button>
+      </div>
+
+      <nav aria-label="DS pages">
+        <a href="landing-velox.html" class="atom-link">VELOX landing</a>
+        &ensp;
+        <a href="landing-terra.html" class="atom-link">TERRA landing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="org-ds-main">
+
+    <!-- Visually-hidden page title: provides a single h1 for screen-reader document outline.
+         The visual h1 in the typography section is aria-hidden="true" to avoid duplication. -->
+    <h1 class="syx-visually-hidden">SYX Design System — Dual Brand Showcase</h1>
+
+    <!-- ============================================
+         SECTION: COLOR TOKENS
+    ============================================= -->
+    <section class="org-ds-section" aria-labelledby="section-colors">
+      <div class="ds-container">
+        <div class="org-ds-section-head">
+          <span class="org-ds-section-label">Atoms</span>
+          <h2 class="org-ds-section-title" id="section-colors">Color Tokens</h2>
+        </div>
+
+        <div class="org-ds-swatches" role="list">
+          <div class="mol-ds-swatch mol-ds-swatch--primary" role="listitem">
+            <div class="mol-ds-swatch__color"></div>
+            <div class="mol-ds-swatch__name">primary</div>
+          </div>
+          <div class="mol-ds-swatch mol-ds-swatch--secondary" role="listitem">
+            <div class="mol-ds-swatch__color"></div>
+            <div class="mol-ds-swatch__name">secondary</div>
+          </div>
+          <div class="mol-ds-swatch mol-ds-swatch--bg-primary" role="listitem">
+            <div class="mol-ds-swatch__color"></div>
+            <div class="mol-ds-swatch__name">bg-primary</div>
+          </div>
+          <div class="mol-ds-swatch mol-ds-swatch--bg-secondary" role="listitem">
+            <div class="mol-ds-swatch__color"></div>
+            <div class="mol-ds-swatch__name">bg-secondary</div>
+          </div>
+          <div class="mol-ds-swatch mol-ds-swatch--text-primary" role="listitem">
+            <div class="mol-ds-swatch__color"></div>
+            <div class="mol-ds-swatch__name">text-primary</div>
+          </div>
+          <div class="mol-ds-swatch mol-ds-swatch--text-secondary" role="listitem">
+            <div class="mol-ds-swatch__color"></div>
+            <div class="mol-ds-swatch__name">text-secondary</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION: TYPOGRAPHY
+    ============================================= -->
+    <section class="org-ds-section" aria-labelledby="section-type">
+      <div class="ds-container">
+        <div class="org-ds-section-head">
+          <span class="org-ds-section-label">Atoms</span>
+          <h2 class="org-ds-section-title" id="section-type">Typography</h2>
+        </div>
+
+        <div role="list">
+          <div class="org-ds-type-item" role="listitem">
+            <div class="org-ds-type-meta">H1 / display</div>
+            <!-- aria-hidden: this h1 is a typography specimen, not the document title.
+                 The real page h1 is rendered visually-hidden above <main>. -->
+            <h1 class="atom-title atom-title--h1" aria-hidden="true">Display Heading</h1>
+          </div>
+          <div class="org-ds-type-item" role="listitem">
+            <div class="org-ds-type-meta">H2</div>
+            <h2 class="atom-title atom-title--h2">Section Title</h2>
+          </div>
+          <div class="org-ds-type-item" role="listitem">
+            <div class="org-ds-type-meta">H3</div>
+            <h3 class="atom-title atom-title--h3">Card Title</h3>
+          </div>
+          <div class="org-ds-type-item" role="listitem">
+            <div class="org-ds-type-meta">Body</div>
+            <p class="atom-txt">The quick brown fox jumps over the lazy dog. Default body text in the active brand
+              typeface.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION: BUTTONS
+    ============================================= -->
+    <section class="org-ds-section" aria-labelledby="section-buttons">
+      <div class="ds-container">
+        <div class="org-ds-section-head">
+          <span class="org-ds-section-label">Atoms</span>
+          <h2 class="org-ds-section-title" id="section-buttons">Buttons</h2>
+        </div>
+
+        <!-- Filled variants -->
+        <div class="org-ds-row__label">Filled</div>
+        <div class="org-ds-row">
+          <button class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-sm">Primary SM</button>
+          <button class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-md">Primary MD</button>
+          <button class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-lg">Primary LG</button>
+          <button class="atom-btn atom-btn--secondary atom-btn--filled atom-btn--size-md">Secondary</button>
+          <button class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-md" disabled>Disabled</button>
+        </div>
+
+        <!-- Outline variants -->
+        <div class="org-ds-row__label">Outline</div>
+        <div class="org-ds-row">
+          <button class="atom-btn atom-btn--primary atom-btn--size-sm">Outline SM</button>
+          <button class="atom-btn atom-btn--primary atom-btn--size-md">Outline MD</button>
+          <button class="atom-btn atom-btn--primary atom-btn--size-lg">Outline LG</button>
+          <button class="atom-btn atom-btn--secondary atom-btn--size-md">Secondary</button>
+          <button class="atom-btn atom-btn--tertiary atom-btn--size-md">Tertiary</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION: PILLS & LABELS
+    ============================================= -->
+    <section class="org-ds-section" aria-labelledby="section-pills">
+      <div class="ds-container">
+        <div class="org-ds-section-head">
+          <span class="org-ds-section-label">Atoms</span>
+          <h2 class="org-ds-section-title" id="section-pills">Pills &amp; Labels</h2>
+        </div>
+
+        <div class="org-ds-row">
+          <span class="atom-pill atom-pill--primary">Primary</span>
+          <span class="atom-pill atom-pill--secondary">Secondary</span>
+          <span class="atom-pill atom-pill--ok">Success</span>
+          <span class="atom-pill atom-pill--ko">Error</span>
+          <span class="atom-pill atom-pill--warning">Warning</span>
+          <span class="atom-label">Label</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION: CARDS
+    ============================================= -->
+    <section class="org-ds-section" aria-labelledby="section-cards">
+      <div class="layout-grid">
+        <div class="org-ds-section-head layout-grid__col-xs-12">
+          <span class="org-ds-section-label">Molecules</span>
+          <h2 class="org-ds-section-title" id="section-cards">Cards</h2>
+        </div>
+
+        <div class="mol-card layout-grid__col-xs-12 layout-grid__col-sm-4">
+          <h3>Default Card</h3>
+          <p>A surface container using semantic background and border tokens. Adapts completely with every brand
+            switch.</p>
+          <button class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-sm">Action</button>
+        </div>
+        <div class="mol-card mol-card--bordered layout-grid__col-xs-12 layout-grid__col-sm-4">
+          <h3>Bordered Card</h3>
+          <p>Stronger border using <code>--semantic-color-border-default</code> — no hardcoded color.</p>
+          <span class="atom-pill atom-pill--primary">Tag</span>
+        </div>
+        <div class="mol-card mol-card--flat layout-grid__col-xs-12 layout-grid__col-sm-4">
+          <h3>Flat Card</h3>
+          <p>Flat variant: no shadow, no border. Just the brand bg and typography doing the work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION: LANDING ORGANISMS PREVIEW
+    ============================================= -->
+    <section class="org-ds-section" aria-labelledby="section-organisms">
+      <div class="layout-grid">
+        <div class="org-ds-section-head layout-grid__col-xs-12">
+          <span class="org-ds-section-label">Organisms</span>
+          <h2 class="org-ds-section-title" id="section-organisms">Brand Landing Organisms</h2>
+        </div>
+
+        <!-- Mini hero preview -->
+        <div class="mol-card mol-card--flat layout-grid__col-xs-12">
+          <p
+            style="font-size: var(--semantic-font-size-body-sm); color: var(--semantic-color-text-secondary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
+            org-landing-hero</p>
+          <h3 style="margin: 0 0 var(--semantic-space-inline-sm);">Hero — rendered live</h3>
+          <p style="margin: 0 0 var(--semantic-space-layout-sm); color: var(--semantic-color-text-secondary);">
+            This text block uses the same button variants as the landing page hero — and switches with the brand.
+          </p>
+          <div class="org-ds-row" style="border: none; padding: 0; margin: 0;">
+            <button class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-md">Primary CTA</button>
+            <button class="atom-btn atom-btn--primary atom-btn--size-md">Ghost CTA</button>
+          </div>
+        </div>
+
+        <!-- Feature card + testimonial + plan preview -->
+        <article class="mol-landing-feature-card layout-grid__col-xs-12 layout-grid__col-sm-4">
+          <div class="mol-landing-feature-card__icon" aria-hidden="true">⚙️</div>
+          <h4 class="mol-landing-feature-card__title">mol-landing-feature-card</h4>
+          <p class="mol-landing-feature-card__desc">Organism-level card — border-hover uses primary brand color via
+            <code>color-mix()</code>. No hardcoded values.
+          </p>
+        </article>
+        <blockquote class="mol-landing-testimonial layout-grid__col-xs-12 layout-grid__col-sm-4">
+          <div class="mol-landing-testimonial__stars">★★★★★</div>
+          <p class="mol-landing-testimonial__body">"mol-landing-testimonial — colour and typographic character are
+            entirely brand-driven."</p>
+          <div class="mol-landing-testimonial__author">
+            <div class="mol-landing-testimonial__avatar" aria-hidden="true">DS</div>
+            <div>
+              <div class="mol-landing-testimonial__name">Design System</div>
+              <div class="mol-landing-testimonial__role">SYX Exercise</div>
+            </div>
+          </div>
+        </blockquote>
+        <article class="mol-landing-plan layout-grid__col-xs-12 layout-grid__col-sm-4">
+          <p class="mol-landing-plan__name">Pro</p>
+          <p class="mol-landing-plan__price">$79 <span>/ mo</span></p>
+          <p class="mol-landing-plan__desc">mol-landing-plan — pricing card with featured modifier and token-driven
+            ring.
+          </p>
+          <ul class="mol-landing-plan__features">
+            <li>All atoms included</li>
+            <li>Zero hardcoded values</li>
+          </ul>
+          <button class="atom-btn atom-btn--primary atom-btn--filled atom-btn--size-sm">Choose</button>
+        </article>
+
+        <!-- CTA band preview -->
+        <div class="org-landing-cta layout-grid__col-xs-12 helper-bg-color-primary" role="region"
+          aria-label="CTA preview">
+          <div class="org-landing-cta__inner">
+            <p class="org-landing-cta__title">org-landing-cta</p>
+            <p class="org-landing-cta__lead">The CTA band uses <code>var(--semantic-color-primary)</code> as its
+              background — no hardcoded colour.</p>
+            <div class="org-landing-cta__actions">
+              <button class="atom-btn atom-btn--size-md org-landing-cta__btn-inverse">Inverse btn</button>
+              <button class="atom-btn atom-btn--primary atom-btn--size-md">Ghost btn</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECTION: FORM ELEMENTS
+    ============================================= -->
+    <section class="org-ds-section" aria-labelledby="section-forms">
+      <div class="layout-grid">
+        <div class="org-ds-section-head layout-grid__col-xs-12">
+          <span class="org-ds-section-label">Atoms</span>
+          <h2 class="org-ds-section-title" id="section-forms">Form Elements</h2>
+        </div>
+
+        <div class="mol-form-field layout-grid__col-xs-12 layout-grid__col-sm-6">
+          <label class="mol-form-field__label" for="demo-text">Text input</label>
+          <input class="atom-form atom-form--text" type="text" id="demo-text" placeholder="Enter value…">
+        </div>
+        <div class="mol-form-field layout-grid__col-xs-12 layout-grid__col-sm-6">
+          <label class="mol-form-field__label" for="demo-select">Select</label>
+          <select class="atom-form atom-form--select" id="demo-select">
+            <option>Option A</option>
+            <option>Option B</option>
+            <option>Option C</option>
+          </select>
+        </div>
+        <div class="mol-form-field layout-grid__col-xs-12 layout-grid__col-sm-6">
+          <label class="mol-form-field__label" for="demo-textarea">Textarea</label>
+          <textarea class="atom-form atom-form--textarea" id="demo-textarea" rows="3"
+            placeholder="Describe your use case…"></textarea>
+        </div>
+        <div class="layout-grid__col-xs-12 layout-grid__col-sm-6">
+          <div class="mol-form-field__label">Toggles</div>
+          <div class="org-ds-row org-ds-row--column">
+            <div class="atom-check syx-mb-2">
+              <input type="checkbox" id="check1" class="atom-check__input">
+              <label for="check1" class="atom-check__label">Check</label>
+            </div>
+            <label class="atom-switch" for="switch1">
+              <input type="checkbox" id="switch1" class="atom-switch__input">
+              <span class="atom-switch__slider" aria-hidden="true"></span>
+              <span class="atom-switch__label">Switch</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================
+       FOOTER
+  ============================================= -->
+  <footer class="org-landing-footer" role="contentinfo">
+    <div class="org-landing-footer__inner">
+      <div class="org-landing-footer__brand">
+        <div class="org-landing-footer__brand-name">SYX DS</div>
+        <p class="org-landing-footer__tagline">Dual-brand design system exercise. Switch brand above to see token-driven
+          theming in action.</p>
+      </div>
+      <div>
+        <h3 class="org-landing-footer__col-title">Pages</h3>
+        <ul class="org-landing-footer__links" role="list">
+          <li><a href="landing-velox.html">VELOX landing</a></li>
+          <li><a href="landing-terra.html">TERRA landing</a></li>
+          <li><a href="index.html">SYX index</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="org-landing-footer__col-title">SCSS Source</h3>
+        <ul class="org-landing-footer__links" role="list">
+          <li><a href="#">scss/themes/velox/</a></li>
+          <li><a href="#">scss/themes/terra/</a></li>
+          <li><a href="#">scss/pages/landing-brand.scss</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="org-landing-footer__copy">
+      © 2025 SYX Design System — José Luis Pizarro Feo
+    </p>
+  </footer>
+
+
+  <script>
+    // Brand switcher — swaps CSS link and body class
+    (function () {
+      var sheet = document.getElementById('syx-brand-stylesheet');
+      var body = document.body;
+      var KEY = 'syx-ds-brand';
+      var brands = {
+        velox: { css: 'css/styles-theme-velox.css', themeClass: 'syx--theme-velox', brandClass: 'brand--velox' },
+        terra: { css: 'css/styles-theme-terra.css', themeClass: 'syx--theme-terra', brandClass: 'brand--terra' }
+      };
+
+      function apply(key) {
+        var b = brands[key];
+        if (!b) return;
+        sheet.href = b.css;
+        // Remove all theme and brand classes, then add the correct ones
+        Object.values(brands).forEach(function (x) {
+          body.classList.remove(x.themeClass, x.brandClass);
+        });
+        body.classList.add(b.themeClass, b.brandClass);
+        document.querySelectorAll('.org-ds-bar__btn').forEach(function (btn) {
+          btn.classList.toggle('is-active', btn.dataset.brand === key);
+        });
+        localStorage.setItem(KEY, key);
+      }
+
+      // Restore last selection
+      var saved = localStorage.getItem(KEY);
+      if (saved && brands[saved]) apply(saved);
+
+      // Wire up buttons
+      document.querySelectorAll('.org-ds-bar__btn').forEach(function (btn) {
+        btn.addEventListener('click', function () { apply(btn.dataset.brand); });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
