@@ -1,0 +1,133 @@
+// CORE
+// ===============================================
+@use "../abstracts/index" as *;
+// ===============================================
+
+// MOLECULES: docs
+// ===============================================
+// All .mol-docs-* and .mol-demo-* molecules used
+// in documentation pages. Extracted from
+// pages/_docs-layout.scss and pages/_docs.scss.
+// ===============================================
+
+@mixin mol-docs($theme: null) {
+
+    // ─────────────────────────────────────────────
+    // MOLECULE: mol-docs-sidenav
+    // Navigation tree inside the sidebar
+    // ─────────────────────────────────────────────
+    .mol-docs-sidenav {
+
+        &__group {
+            margin-bottom: var(--semantic-space-component-lg);
+        }
+
+        &__title {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--semantic-color-text-tertiary);
+            margin-bottom: var(--semantic-space-component-xs);
+            padding: 0 var(--layout-pad-2);
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: var(--semantic-font-size-body);
+            color: var(--semantic-color-text-secondary);
+            text-decoration: none;
+            padding: 0.45rem var(--layout-pad-2);
+            border-radius: var(--semantic-border-radius-default);
+            border-left: 2px solid transparent;
+            @include transition(color 0.15s ease, background 0.15s ease, border-color 0.15s ease);
+
+            @include breakpoint(tablet) {
+                font-size: var(--semantic-font-size-body-small);
+                padding: 0.35rem var(--layout-pad-2);
+            }
+
+            @media (hover: hover) {
+                &:hover {
+                    color: var(--color-primary);
+                    background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+                    border-left-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+                }
+            }
+
+            &--active,
+            &[aria-current="page"] {
+                color: var(--color-primary);
+                background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+                border-left-color: var(--color-primary);
+                font-weight: 600;
+            }
+
+            &:focus-visible {
+                outline: 0.2rem solid var(--semantic-color-state-focus);
+            }
+        }
+    }
+
+
+    // ─────────────────────────────────────────────
+    // MOLECULE: mol-docs-section-header
+    // (legacy — kept for compat)
+    // ─────────────────────────────────────────────
+    .mol-docs-section-header {
+        padding-bottom: var(--layout-pad-4);
+        border-bottom: 1px solid var(--semantic-color-border-subtle);
+        margin-bottom: var(--layout-gap-4);
+    }
+
+
+    // ─────────────────────────────────────────────
+    // MOLECULE: mol-demo-icon-preview
+    // ─────────────────────────────────────────────
+    .mol-demo-icon-preview {
+        display: block;
+        margin: 0 auto var(--semantic-space-stack-sm);
+    }
+
+
+    // ─────────────────────────────────────────────
+    // MOLECULE: mol-demo-badge
+    // Inline badge for class/layer references in docs.
+    // NOTE: demo-only — safe to remove in production.
+    // ─────────────────────────────────────────────
+    .mol-demo-badge {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 0.1em 0.5em;
+        border-radius: 4px;
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
+
+        &--atom {
+            background: var(--primitive-color-blue-50);
+            color: var(--primitive-color-blue-600);
+        }
+
+        &--molecule {
+            background: var(--primitive-color-cyan-50);
+            color: var(--primitive-color-cyan-700);
+        }
+
+        &--organism {
+            background: var(--primitive-color-orange-50);
+            color: var(--primitive-color-orange-700);
+        }
+
+        &--utility {
+            background: var(--semantic-color-bg-tertiary);
+            color: var(--semantic-color-text-secondary);
+        }
+    }
+
+}

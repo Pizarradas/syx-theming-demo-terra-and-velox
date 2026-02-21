@@ -1,0 +1,194 @@
+// CORE
+// ===============================================
+@use "../abstracts/index" as *;
+// ===============================================
+
+// ORGANISMS: ds-showcase
+// ===============================================
+// All .org-ds-* organisms used in the design
+// system showcase page (ds-system.html).
+//
+// BEM naming — layer prefix: org-ds-*
+// All values via --component-ds-* tokens.
+// ===============================================
+
+@mixin org-ds-showcase($theme: null) {
+
+    // ─────────────────────────────────────────────
+    // ORGANISM: org-ds-bar (sticky brand strip)
+    // ─────────────────────────────────────────────
+    .org-ds-bar {
+        @include sticky($top: 0);
+        z-index: var(--component-ds-bar-z-index);
+        height: var(--component-ds-bar-height);
+        background-color: var(--component-ds-bar-bg);
+        @include border(bottom, 1px, solid, var(--component-ds-bar-border));
+        @include flex(null, null, center, null, null);
+
+        &__inner {
+            @include flex-between;
+            @include padding(0 var(--component-ds-bar-padding-x));
+            width: 100%;
+            max-width: var(--component-landing-container-max, 75rem);
+            @include margin(null auto);
+            gap: var(--semantic-space-inline-md);
+        }
+
+        &__logo {
+            font-weight: 800;
+            font-size: var(--semantic-font-size-body);
+            color: var(--component-ds-bar-logo-color);
+            letter-spacing: -0.03em;
+            flex-shrink: 0;
+        }
+
+        &__switcher {
+            @include flex(null, null, center, null, var(--semantic-space-inline-sm));
+        }
+
+        &__label {
+            font-size: var(--semantic-font-size-body-sm, 0.75rem);
+            color: var(--component-ds-bar-label-color);
+            white-space: nowrap;
+        }
+
+        &__btn {
+            @include flex(null, null, center, null, var(--semantic-space-inline-xs));
+            @include padding(var(--semantic-space-component-xs, 0.35rem) var(--semantic-space-component-sm));
+            background-color: var(--component-ds-bar-btn-bg);
+            color: var(--component-ds-bar-btn-color);
+            @include border(all, 1px, solid, var(--component-ds-bar-btn-border));
+            @include border-radius(var(--component-ds-bar-btn-radius));
+            font-size: var(--semantic-font-size-body-sm, 0.8rem);
+            font-weight: var(--semantic-font-weight-medium);
+            cursor: pointer;
+            @include transition(background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease);
+
+            &.is-active {
+                background-color: var(--component-ds-bar-btn-active-bg);
+                color: var(--component-ds-bar-btn-active-color);
+                border-color: var(--component-ds-bar-btn-active-bg);
+            }
+
+            &:hover:not(.is-active) {
+                border-color: var(--semantic-color-primary);
+                color: var(--semantic-color-primary);
+            }
+
+            &:focus-visible {
+                outline: 0.2rem solid var(--semantic-color-state-focus);
+                @include border-radius(var(--component-ds-bar-btn-radius));
+            }
+        }
+
+        &__btn-dot {
+            display: inline-block;
+            @include size(var(--component-ds-bar-btn-dot-size));
+            @include border-radius(50%);
+            background-color: currentColor;
+        }
+    }
+
+
+    // ─────────────────────────────────────────────
+    // DS SHOWCASE LAYOUT
+    // ─────────────────────────────────────────────
+    .org-ds-main {
+        @include padding(var(--component-ds-section-padding-y) 0);
+        min-height: 100vh;
+    }
+
+    .org-ds-section {
+        @include padding(var(--component-ds-section-padding-y) 0);
+        @include border(bottom, 1px, solid, var(--component-ds-section-border));
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .org-ds-section-head {
+        @include margin(null null var(--semantic-space-layout-md) null);
+    }
+
+    .org-ds-section-label {
+        display: block;
+        font-size: var(--component-ds-section-label-size);
+        font-weight: var(--semantic-font-weight-bold);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--component-ds-section-label-color);
+        @include margin(null null var(--semantic-space-inline-xs) null);
+    }
+
+    .org-ds-section-title {
+        font-size: var(--component-ds-section-title-size);
+        font-weight: var(--semantic-font-weight-bold);
+        color: var(--semantic-color-text-primary);
+        @include margin(0);
+    }
+
+
+    // ─────────────────────────────────────────────
+    // DS ROW: labeled row for component demos
+    // ─────────────────────────────────────────────
+    .org-ds-row {
+        @include flex(null, null, null, wrap, var(--semantic-space-inline-md));
+        @include margin(null null var(--semantic-space-layout-md) null);
+        @include padding(null null var(--semantic-space-inline-md) null);
+        @include border(bottom, 1px, solid, var(--component-ds-type-item-border));
+        align-items: flex-start; // let each button show its natural height
+
+        &--column {
+            flex-direction: column;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .org-ds-row__label {
+        display: block;
+        font-size: var(--component-ds-row-label-size);
+        font-weight: var(--component-ds-row-label-weight);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--component-ds-row-label-color);
+        @include margin(null null var(--semantic-space-inline-sm) null);
+        flex-basis: 100%;
+    }
+
+
+    // ─────────────────────────────────────────────
+    // DS TYPE SPECIMEN
+    // ─────────────────────────────────────────────
+    .org-ds-type-item {
+        @include padding(var(--component-ds-type-item-padding));
+        @include border(bottom, 1px, solid, var(--component-ds-type-item-border));
+        @include flex(null, null, baseline, null, var(--semantic-space-inline-md));
+        flex-wrap: wrap;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .org-ds-type-meta {
+        font-size: var(--component-ds-type-meta-size);
+        color: var(--component-ds-type-meta-color);
+        white-space: nowrap;
+        min-width: 9rem;
+        flex-shrink: 0;
+    }
+
+
+    // ─────────────────────────────────────────────
+    // DS COLOR SWATCHES (organism wrapper)
+    // ─────────────────────────────────────────────
+    .org-ds-swatches {
+        @include flex(null, null, null, wrap, var(--semantic-space-inline-md));
+        @include margin(null null var(--semantic-space-layout-md) null);
+    }
+
+}

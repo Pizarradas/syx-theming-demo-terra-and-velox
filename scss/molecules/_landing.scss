@@ -1,0 +1,289 @@
+// CORE
+// ===============================================
+@use "../abstracts/index" as *;
+// ===============================================
+
+// MOLECULES: landing-brand
+// ===============================================
+// All .mol-landing-* molecules used in the VELOX
+// and TERRA marketing landing pages.
+//
+// BEM naming — layer prefix: mol-landing-*
+// All values via --component-landing-* tokens.
+// ===============================================
+
+@mixin mol-landing($theme: null) {
+
+    // ─────────────────────────────────────────────
+    // MOLECULE: mol-landing-feature-card
+    // ─────────────────────────────────────────────
+    .mol-landing-feature-card {
+        @include padding(var(--component-landing-card-padding));
+        background-color: var(--component-landing-card-bg);
+        @include border(all, 1px, solid, var(--component-landing-card-border));
+        @include border-radius(var(--component-landing-card-radius));
+        box-shadow: var(--component-landing-card-shadow);
+        @include transition(border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease);
+
+        &:hover {
+            border-color: var(--component-landing-card-border-hover);
+            box-shadow: var(--component-landing-card-shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        &__icon {
+            @include flex-center;
+            @include size(var(--component-landing-card-icon-size));
+            background-color: var(--component-landing-card-icon-bg);
+            @include border-radius(var(--component-landing-card-icon-radius));
+            font-size: var(--component-landing-card-icon-font-size, 1.75rem);
+            @include margin(null null var(--semantic-space-inline-lg) null);
+        }
+
+        &__title {
+            font-size: var(--semantic-font-size-body-lg, 1.125rem);
+            font-weight: var(--semantic-font-weight-bold);
+            color: var(--semantic-color-text-primary);
+            @include margin(0 0 var(--semantic-space-inline-sm) 0);
+        }
+
+        &__desc {
+            font-size: var(--semantic-font-size-body);
+            color: var(--semantic-color-text-secondary);
+            line-height: var(--semantic-line-height-normal);
+            @include margin(0);
+        }
+    }
+
+
+    // ─────────────────────────────────────────────
+    // MOLECULE: mol-landing-plan
+    // ─────────────────────────────────────────────
+    .mol-landing-plan {
+        @include relative();
+        @include padding(var(--component-landing-plan-padding));
+        background-color: var(--component-landing-plan-bg);
+        @include border(all, 1px, solid, var(--component-landing-plan-border));
+        @include border-radius(var(--component-landing-plan-radius));
+        @include flex(column, null, null, null, null);
+        @include transition(box-shadow 0.25s ease, transform 0.25s ease);
+
+        &--featured {
+            background-color: var(--component-landing-plan-featured-bg, var(--semantic-color-bg-tertiary));
+            border-color: var(--component-landing-plan-border-featured);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--semantic-color-primary) 20%, transparent),
+                var(--semantic-shadow-md);
+            order: -1;
+
+            @include breakpoint(tablet) {
+                order: 0;
+                transform: scale(1.04);
+                box-shadow: 0 0 0 4px color-mix(in srgb, var(--semantic-color-primary) 25%, transparent),
+                    var(--semantic-shadow-lg, 0 16px 48px rgba(0, 0, 0, 0.2));
+            }
+        }
+
+        &__badge {
+            @include absolute($top: -0.9rem, $left: 50%);
+            transform: translateX(-50%);
+            white-space: nowrap;
+            @include padding(0.35rem var(--semantic-space-component-md, 1rem));
+            background-color: var(--component-landing-plan-badge-bg);
+            color: var(--component-landing-plan-badge-color);
+            font-size: var(--semantic-font-size-body-sm, 0.8rem);
+            font-weight: var(--semantic-font-weight-bold);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            @include border-radius(var(--component-landing-plan-badge-radius));
+        }
+
+        &__name {
+            font-size: var(--semantic-font-size-body-sm, 0.875rem);
+            font-weight: var(--semantic-font-weight-bold);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--semantic-color-text-secondary);
+            @include margin(0 0 var(--semantic-space-inline-xs) 0);
+        }
+
+        &__price {
+            font-size: var(--component-landing-plan-price-size);
+            font-weight: var(--semantic-font-weight-bold);
+            font-family: var(--semantic-font-family-heading, var(--semantic-font-family-primary));
+            color: var(--component-landing-plan-price-color);
+            line-height: 1.1;
+            @include margin(0 0 var(--semantic-space-inline-sm) 0);
+
+            span {
+                font-size: var(--semantic-font-size-body);
+                color: var(--semantic-color-text-secondary);
+                font-weight: normal;
+            }
+        }
+
+        &__desc {
+            font-size: var(--semantic-font-size-body);
+            color: var(--semantic-color-text-secondary);
+            @include margin(0 0 var(--semantic-space-inline-md) 0);
+        }
+
+        &__features {
+            list-style: none;
+            @include margin(0 0 var(--semantic-space-layout-md) 0);
+            @include padding(0);
+            flex: 1;
+
+            li {
+                @include padding(var(--semantic-space-inline-xs) 0);
+                @include border(bottom, 1px, solid, var(--semantic-color-border-subtle));
+                font-size: var(--semantic-font-size-body);
+                color: var(--semantic-color-text-secondary);
+                display: flex;
+                align-items: center;
+                gap: var(--semantic-space-inline-sm);
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &::before {
+                    content: "✓";
+                    color: var(--semantic-color-primary);
+                    flex-shrink: 0;
+                    font-weight: var(--semantic-font-weight-bold);
+                }
+            }
+        }
+
+        &:not(&--featured) .atom-btn--ghost,
+        &:not(&--featured) .atom-btn:not([class*="--primary"]):not([class*="--secondary"]) {
+            background-color: var(--component-landing-plan-cta-bg);
+            color: var(--component-landing-plan-cta-color);
+            @include border(all, 1px, solid, var(--component-landing-plan-cta-border));
+
+            &:hover {
+                background-color: color-mix(in srgb, var(--semantic-color-primary) 20%, transparent);
+                border-color: var(--semantic-color-primary);
+            }
+        }
+    }
+
+
+    // ─────────────────────────────────────────────
+    // MOLECULE: mol-landing-testimonial
+    // ─────────────────────────────────────────────
+    .mol-landing-testimonial {
+        @include padding(var(--component-landing-testimonial-padding));
+        background-color: var(--component-landing-testimonial-bg);
+        @include border(all, 1px, solid, var(--component-landing-testimonial-border));
+        @include border-radius(var(--component-landing-testimonial-radius));
+        @include flex(column, null, null, null, var(--semantic-space-inline-md));
+        @include margin(0);
+        min-height: var(--component-landing-testimonial-min-height, 14rem);
+
+        &__stars {
+            color: var(--component-landing-testimonial-star);
+            letter-spacing: 0.05em;
+        }
+
+        &__body {
+            font-size: var(--semantic-font-size-body-lg, 1.05rem);
+            color: var(--semantic-color-text-secondary);
+            line-height: var(--semantic-line-height-normal);
+            flex: 1;
+            @include margin(0);
+            @include relative();
+
+            &::before {
+                content: '\201C';
+                @include absolute($top: -0.75rem, $left: -0.25rem);
+                font-size: 4rem;
+                line-height: 1;
+                color: color-mix(in srgb, var(--semantic-color-primary) 25%, transparent);
+                font-family: var(--semantic-font-family-heading, Georgia, serif);
+                pointer-events: none;
+            }
+        }
+
+        &__author {
+            @include flex(null, null, center, null, var(--semantic-space-inline-sm));
+            @include margin(auto null null null);
+        }
+
+        &__avatar {
+            @include flex-center;
+            @include size(2.5rem);
+            flex-shrink: 0;
+            @include border-radius(50%);
+            background-color: var(--component-landing-testimonial-avatar-bg);
+            color: var(--component-landing-testimonial-avatar-color);
+            font-size: var(--semantic-font-size-body-sm, 0.75rem);
+            font-weight: var(--semantic-font-weight-bold);
+        }
+
+        &__name {
+            font-weight: var(--semantic-font-weight-bold);
+            color: var(--semantic-color-text-primary);
+            font-size: var(--semantic-font-size-body);
+        }
+
+        &__role {
+            font-size: var(--semantic-font-size-body-sm, 0.8rem);
+            color: var(--semantic-color-text-secondary);
+        }
+    }
+
+
+
+    // ─────────────────────────────────────────────
+    // MOLECULE: mol-landing-icon-box
+    // Icon container with color variants
+    // ─────────────────────────────────────────────
+    .mol-landing-icon-box {
+        width: 48px;
+        height: 48px;
+        @include border-radius(12px);
+        @include flex-center();
+        margin-bottom: var(--semantic-space-inline-md);
+        background: color-mix(in srgb, var(--semantic-color-primary) 10%, var(--semantic-color-bg-secondary));
+        color: var(--semantic-color-primary);
+
+        &--purple {
+            background: color-mix(in srgb, var(--primitive-color-purple-500) 12%, var(--semantic-color-bg-secondary));
+            color: var(--primitive-color-purple-400);
+        }
+
+        &--blue {
+            background: color-mix(in srgb, var(--primitive-color-blue-500) 12%, var(--semantic-color-bg-secondary));
+            color: var(--primitive-color-blue-400);
+        }
+
+        &--cyan {
+            background: color-mix(in srgb, var(--primitive-color-cyan-500) 12%, var(--semantic-color-bg-secondary));
+            color: var(--primitive-color-cyan-400);
+        }
+
+        &--orange {
+            background: color-mix(in srgb, var(--primitive-color-orange-500) 12%, var(--semantic-color-bg-secondary));
+            color: var(--primitive-color-orange-400);
+        }
+
+        &--green {
+            background: color-mix(in srgb, var(--primitive-color-green-500) 12%, var(--semantic-color-bg-secondary));
+            color: var(--primitive-color-green-400);
+        }
+
+        &--pink {
+            background: color-mix(in srgb, var(--primitive-color-pink-500) 12%, var(--semantic-color-bg-secondary));
+            color: var(--primitive-color-pink-400);
+        }
+
+        &--teal {
+            background: color-mix(in srgb, var(--primitive-color-teal-500, #0d9488) 12%, var(--semantic-color-bg-secondary));
+            color: var(--primitive-color-teal-400, #2dd4bf);
+        }
+
+        // intentional: teal not in primitive scale yet
+    }
+
+}

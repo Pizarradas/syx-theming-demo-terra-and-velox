@@ -1,0 +1,13 @@
+// SYX ORGANISMS
+// ===============================================
+@forward 'documentation-layout'; // @mixin org-documentation-layout($theme)
+@forward 'content-columns';      // @mixin org-content-columns($theme)
+@forward 'navbar';               // @mixin org-navbar($theme)
+@forward 'header';               // @mixin org-header($theme) â unified, replaces header-example-02..05
+
+
+@forward 'landing';              // @mixin org-landing($theme) -- landing page organisms
+@forward 'ds-showcase';          // @mixin org-ds-showcase($theme) -- design system showcase organisms
+
+@forward 'docs';              // @mixin org-docs($theme) -- docs-page organisms + org-site-footer
+

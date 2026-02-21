@@ -1,0 +1,335 @@
+// CORE
+// ===============================================
+@use "../abstracts/index" as *;
+// ===============================================
+
+// ORGANISMS: docs
+// ===============================================
+// All .org-docs-* organisms used in documentation
+// pages. Extracted from pages/_docs-layout.scss.
+//
+// BEM naming — layer prefix: org-docs-*
+// ===============================================
+
+@mixin org-docs($theme: null) {
+
+    // ─────────────────────────────────────────────
+    // ORGANISM: org-docs-sidebar
+    // Mobile-first collapsible / sticky sidebar
+    // ─────────────────────────────────────────────
+    .org-docs-sidebar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: var(--semantic-color-bg-secondary);
+        border-bottom: 1px solid var(--semantic-color-border-subtle);
+        border-right: none;
+        overflow: hidden;
+        max-height: 0;
+        padding: 0 var(--layout-pad-3);
+        @include transition(max-height 0.32s ease, opacity 0.25s ease, box-shadow 0.25s ease);
+        opacity: 0;
+        pointer-events: none;
+
+        &.is-open {
+            max-height: 85vh;
+            padding: var(--layout-pad-3);
+            opacity: 1;
+            overflow-y: auto;
+            pointer-events: auto;
+            box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.18);
+        }
+
+        @include breakpoint(tablet) {
+            position: sticky;
+            top: 60px;
+            height: calc(100vh - 60px);
+            max-height: none !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            padding: var(--layout-pad-4) var(--layout-pad-3) var(--layout-pad-5) !important;
+            border-bottom: none;
+            border-right: 1px solid var(--semantic-color-border-subtle);
+            box-shadow: none !important;
+            overflow: hidden;
+            overflow-y: auto;
+            @include transition(none);
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: var(--semantic-color-border-subtle);
+                border-radius: 4px;
+            }
+        }
+
+        &__logo {
+            display: none;
+
+            @include breakpoint(tablet) {
+                display: block;
+                font-size: var(--primitive-fluid-font-h4);
+                font-family: var(--primitive-font-family-syne-bold);
+                font-weight: 800;
+                color: var(--color-primary);
+                letter-spacing: -0.03em;
+                text-decoration: none;
+                margin-bottom: var(--semantic-space-component-xs);
+                @include transition(opacity 0.2s ease);
+
+                &:hover {
+                    opacity: 0.75;
+                }
+
+                &:focus-visible {
+                    outline: 0.2rem solid var(--semantic-color-state-focus);
+                    border-radius: var(--semantic-border-radius-sm);
+                }
+            }
+        }
+
+        &__version {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: var(--primitive-color-purple-500);
+            background: color-mix(in srgb, var(--primitive-color-purple-500) 10%, transparent);
+            padding: 0.2rem 0.55rem;
+            border-radius: var(--semantic-border-radius-full);
+            margin-bottom: var(--semantic-space-component-md);
+        }
+
+        &__search {
+            position: relative;
+            margin-bottom: var(--semantic-space-component-md);
+
+            &-icon {
+                position: absolute;
+                top: 50%;
+                left: 0.65rem;
+                transform: translateY(-50%);
+                color: var(--semantic-color-text-tertiary);
+                pointer-events: none;
+                font-size: 0.8rem;
+            }
+
+            input {
+                width: 100%;
+                padding: 0.45rem 0.75rem 0.45rem 2rem;
+                background: var(--semantic-color-bg-primary);
+                border: 1px solid var(--semantic-color-border-subtle);
+                border-radius: var(--semantic-border-radius-default);
+                font-size: var(--semantic-font-size-body-small);
+                color: var(--semantic-color-text-secondary);
+                outline: none;
+                box-sizing: border-box;
+                @include transition(border-color 0.2s ease, box-shadow 0.2s ease);
+
+                &::placeholder {
+                    color: var(--semantic-color-text-tertiary);
+                }
+
+                &:focus {
+                    border-color: var(--semantic-color-primary);
+                    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 12%, transparent);
+                }
+            }
+        }
+
+        &__divider {
+            height: 1px;
+            background: var(--semantic-color-border-subtle);
+            margin: var(--layout-gap-3) 0;
+        }
+    }
+
+
+    // ─────────────────────────────────────────────
+    // ORGANISM: org-docs-page-header
+    // ─────────────────────────────────────────────
+    .org-docs-page-header {
+        @include relative();
+        overflow: hidden;
+        background: var(--semantic-color-bg-secondary);
+        border-bottom: 1px solid var(--semantic-color-border-subtle);
+        padding: var(--layout-pad-6) var(--layout-pad-3) var(--layout-pad-5);
+        margin-bottom: var(--layout-gap-5);
+
+        @include breakpoint(tablet) {
+            padding: var(--layout-pad-6) var(--layout-pad-4) var(--layout-pad-5);
+        }
+
+        &::before {
+            content: '';
+            @include absolute($top: -40%, $right: -4%);
+            width: 480px;
+            height: 480px;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                    color-mix(in srgb, var(--color-primary) 12%, transparent) 0%,
+                    transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        &::after {
+            content: '';
+            @include absolute($bottom: -30%, $left: 5%);
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle,
+                    color-mix(in srgb, var(--color-secondary) 10%, transparent) 0%,
+                    transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        >* {
+            @include relative();
+            z-index: 1;
+        }
+
+        &__eyebrow {
+            display: flex;
+            align-items: center;
+            gap: var(--semantic-space-inline-sm);
+            margin-bottom: var(--semantic-space-component-sm);
+        }
+
+        &__breadcrumb {
+            font-size: var(--semantic-font-size-body-small);
+            color: var(--semantic-color-text-tertiary);
+            text-decoration: none;
+            @include transition(color 0.2s ease);
+
+            @media (hover: hover) {
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+
+            &:focus-visible {
+                outline: 0.2rem solid var(--semantic-color-state-focus);
+                border-radius: var(--semantic-border-radius-sm);
+            }
+        }
+
+        &__sep {
+            color: var(--semantic-color-border-default);
+            font-size: var(--semantic-font-size-body-small);
+        }
+
+        &__meta {
+            display: flex;
+            align-items: center;
+            gap: var(--semantic-space-inline-md);
+            margin-top: var(--semantic-space-component-md);
+            font-size: var(--semantic-font-size-body-small);
+            color: var(--semantic-color-text-tertiary);
+        }
+
+        &__meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3em;
+        }
+    }
+
+
+    // ─────────────────────────────────────────────
+    // ORGANISM: org-site-footer
+    // Canonical footer — used across docs and landing pages
+    // ─────────────────────────────────────────────
+    .org-site-footer {
+        border-top: 1px solid var(--semantic-color-border-subtle);
+        background: var(--semantic-color-bg-secondary);
+        padding: var(--layout-pad-4) var(--layout-pad-3);
+        display: flex;
+        flex-direction: column;
+        gap: var(--semantic-space-component-md);
+
+        @include breakpoint(tablet) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--layout-pad-4) var(--layout-pad-5);
+        }
+
+        &__brand {
+            display: flex;
+            flex-direction: column;
+            gap: var(--semantic-space-component-xs);
+        }
+
+        &__logo {
+            font-family: var(--primitive-font-family-syne-bold);
+            font-size: var(--semantic-font-size-h4);
+            font-weight: 800;
+            color: var(--color-primary);
+            letter-spacing: -0.03em;
+            text-decoration: none;
+        }
+
+        &__tagline {
+            font-size: var(--semantic-font-size-body-small);
+            color: var(--semantic-color-text-tertiary);
+        }
+
+        &__links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--semantic-space-inline-md);
+
+            a {
+                font-size: var(--semantic-font-size-body-small);
+                color: var(--semantic-color-text-secondary);
+                text-decoration: none;
+                @include transition(color 0.2s ease);
+
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+        }
+
+        &__copy {
+            font-size: var(--semantic-font-size-body-small);
+            color: var(--semantic-color-text-tertiary);
+        }
+
+        // Simpler variant used in landing (no __brand/__logo/__tagline substructure)
+        &__version {
+            color: var(--semantic-color-text-tertiary);
+            font-size: var(--semantic-font-size-body-small);
+        }
+
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            gap: var(--semantic-space-component-md);
+            align-items: flex-start;
+            max-width: 1280px;
+            margin-inline: auto;
+
+            @include breakpoint(tablet) {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+
+}

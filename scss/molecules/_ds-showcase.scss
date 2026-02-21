@@ -1,0 +1,57 @@
+// CORE
+// ===============================================
+@use "../abstracts/index" as *;
+// ===============================================
+
+// MOLECULES: ds-showcase
+// ===============================================
+// .mol-ds-* molecules for the design system
+// showcase page (ds-system.html).
+// ===============================================
+
+@mixin mol-ds-showcase($theme: null) {
+
+    // ─────────────────────────────────────────────
+    // MOLECULE: mol-ds-swatch
+    // ─────────────────────────────────────────────
+    .mol-ds-swatch {
+        @include flex(column, null, null, null, var(--semantic-space-inline-xs));
+        min-width: 5rem;
+
+        &__color {
+            @include size(4rem, 4rem);
+            @include border-radius(var(--semantic-border-radius-default));
+            @include border(all, 1px, solid, var(--semantic-color-border-subtle));
+        }
+
+        &__name {
+            font-size: var(--semantic-font-size-body-sm, 0.75rem);
+            color: var(--semantic-color-text-secondary);
+        }
+
+        &--primary .mol-ds-swatch__color {
+            background-color: var(--semantic-color-primary);
+        }
+
+        &--secondary .mol-ds-swatch__color {
+            background-color: var(--semantic-color-secondary);
+        }
+
+        &--bg-primary .mol-ds-swatch__color {
+            background-color: var(--semantic-color-bg-primary);
+        }
+
+        &--bg-secondary .mol-ds-swatch__color {
+            background-color: var(--semantic-color-bg-secondary);
+        }
+
+        &--text-primary .mol-ds-swatch__color {
+            background-color: var(--semantic-color-text-primary);
+        }
+
+        &--text-secondary .mol-ds-swatch__color {
+            background-color: var(--semantic-color-text-secondary);
+        }
+    }
+
+}
