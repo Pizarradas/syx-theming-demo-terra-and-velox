@@ -1,0 +1,53 @@
+// COMPONENT TOKENS: DS BAR
+// ================================================
+// Tokens for the org-ds-bar sticky brand switcher
+// in the design system showcase page.
+// All values reference semantic tokens.
+// ================================================
+
+:root {
+
+    // DS BAR: LAYOUT
+    // ================================================
+    --component-ds-bar-height: 3.5rem;
+    --component-ds-bar-z-index: 200;
+    --component-ds-bar-padding-x: var(--semantic-space-layout-md);
+
+    // DS BAR: COLORS
+    // ================================================
+    --component-ds-bar-bg: var(--semantic-color-bg-primary);
+    --component-ds-bar-border: var(--semantic-color-border-subtle);
+    --component-ds-bar-logo-color: var(--semantic-color-primary);
+    --component-ds-bar-label-color: var(--semantic-color-text-secondary);
+
+    // DS BAR: BUTTON
+    // ================================================
+    --component-ds-bar-btn-bg: transparent;
+    --component-ds-bar-btn-color: var(--semantic-color-text-secondary);
+    --component-ds-bar-btn-border: var(--semantic-color-border-subtle);
+    --component-ds-bar-btn-radius: var(--semantic-border-radius-default);
+    --component-ds-bar-btn-active-bg: var(--semantic-color-primary);
+    --component-ds-bar-btn-active-color: var(--semantic-color-text-inverse);
+    --component-ds-bar-btn-dot-size: 0.5rem;
+
+    // DS SECTION: HEADING
+    // ================================================
+    --component-ds-section-padding-y: var(--semantic-space-layout-lg);
+    --component-ds-section-border: var(--semantic-color-border-subtle);
+    --component-ds-section-label-color: var(--semantic-color-primary);
+    --component-ds-section-label-size: var(--semantic-font-size-body-sm, 0.75rem);
+    --component-ds-section-title-size: var(--primitive-fluid-font-h2, 2rem);
+
+    // DS META: TYPE SPECIMEN
+    // ================================================
+    --component-ds-type-meta-color: var(--semantic-color-text-secondary);
+    --component-ds-type-meta-size: var(--semantic-font-size-body-sm, 0.75rem);
+    --component-ds-type-item-border: var(--semantic-color-border-subtle);
+    --component-ds-type-item-padding: var(--semantic-space-inset-md);
+
+    // DS ROW: LABEL
+    // ================================================
+    --component-ds-row-label-color: var(--semantic-color-text-secondary);
+    --component-ds-row-label-size: var(--semantic-font-size-body-sm, 0.75rem);
+    --component-ds-row-label-weight: var(--semantic-font-weight-bold);
+}

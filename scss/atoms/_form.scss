@@ -1,0 +1,139 @@
+// CORE
+// ===============================================
+@use "../abstracts/index" as *;
+// ===============================================
+
+// atom: form
+// ===============================================
+// API: .atom-label Â· .atom-input-wrapper Â· .atom-input
+// ===============================================
+@mixin atom-form($theme: null) {
+
+  // -----------------------------------------------
+  // LABEL â @canonical
+  // -----------------------------------------------
+  .atom-label {
+    display: block;
+    font-family: var(--component-form-field-font-family);
+    font-size: var(--component-form-field-font-size);
+    font-weight: var(--primitive-font-weight-medium);
+    line-height: var(--component-form-field-line-height);
+    color: var(--component-form-field-color);
+    margin-bottom: var(--component-form-field-label-margin-bottom);
+  }
+
+  // -----------------------------------------------
+  // INPUT WRAPPER â @canonical
+  // -----------------------------------------------
+  .atom-input-wrapper {
+    @include relative();
+    @include flex-center();
+  }
+
+  // -----------------------------------------------
+  // INPUT â @canonical
+  // -----------------------------------------------
+  .atom-input {
+    display: block;
+    width: 100%;
+    height: var(--component-form-field-height);
+    @include padding(var(--component-form-field-padding-y) var(--component-form-field-padding-x));
+    @include border(all,
+      var(--component-form-field-border-width),
+      solid,
+      var(--component-form-field-border));
+    @include border-radius(var(--component-form-field-border-radius));
+    background-color: var(--component-form-field-bg);
+    font-family: var(--component-form-field-font-family);
+    font-size: var(--component-form-field-font-size);
+    line-height: var(--component-form-field-line-height);
+    color: var(--component-form-field-color);
+    @include transition(border-color 0.15s ease, box-shadow 0.15s ease);
+
+    &::placeholder {
+      color: var(--component-form-field-placeholder);
+    }
+
+    &:hover:not(:disabled) {
+      border-color: var(--semantic-color-primary);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--component-form-field-border-focus);
+      box-shadow: var(--component-form-field-shadow-focus);
+    }
+
+    &:disabled {
+      background-color: var(--component-form-field-bg-disabled);
+      border-color: var(--component-form-field-color-disabled);
+      cursor: not-allowed;
+    }
+  }
+
+  // -----------------------------------------------
+  // FORM INPUT — semantic class for direct element use
+  // Applied directly on <input>, <select>, <textarea>
+  // -----------------------------------------------
+  .atom-form {
+    // Inherits all base input styles
+    display: block;
+    width: 100%;
+    @include padding(var(--component-form-field-padding-y) var(--component-form-field-padding-x));
+    @include border(all,
+      var(--component-form-field-border-width),
+      solid,
+      var(--component-form-field-border));
+    @include border-radius(var(--component-form-field-border-radius));
+    background-color: var(--component-form-field-bg);
+    font-family: var(--component-form-field-font-family);
+    font-size: var(--component-form-field-font-size);
+    line-height: var(--component-form-field-line-height);
+    color: var(--component-form-field-color);
+    @include transition(border-color 0.15s ease, box-shadow 0.15s ease);
+
+    &::placeholder {
+      color: var(--component-form-field-placeholder);
+    }
+
+    &:hover:not(:disabled) {
+      border-color: var(--semantic-color-primary);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--component-form-field-border-focus);
+      box-shadow: var(--component-form-field-shadow-focus);
+    }
+
+    &:disabled {
+      background-color: var(--component-form-field-bg-disabled);
+      border-color: var(--component-form-field-color-disabled);
+      cursor: not-allowed;
+    }
+
+    // --text: standard single-line text input
+    &--text {
+      height: var(--component-form-field-height);
+    }
+
+    // --select: native <select> element
+    &--select {
+      height: var(--component-form-field-height);
+      appearance: none;
+      background-image: var(--icon-arrow-default);
+      background-repeat: no-repeat;
+      background-position: right var(--component-form-field-padding-x) center;
+      background-size: 1em;
+      padding-right: calc(var(--component-form-field-padding-x) * 2.5);
+      cursor: pointer;
+    }
+
+    // --textarea: multiline input
+    &--textarea {
+      height: auto;
+      resize: vertical;
+      min-height: calc(var(--component-form-field-height) * 2.5);
+    }
+  }
+}

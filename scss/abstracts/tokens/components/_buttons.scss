@@ -1,0 +1,124 @@
+// COMPONENT TOKENS: BUTTONS
+// ================================================
+// Button-specific tokens that reference semantic tokens
+// ================================================
+
+:root {
+  // BUTTON: PRIMARY
+  // ================================================
+  --component-button-primary-color: var(--semantic-color-primary);
+  --component-button-primary-bg: transparent;
+  --component-button-primary-border: var(--semantic-color-primary);
+  --component-button-primary-color-hover: var(--semantic-color-state-hover-primary);
+  --component-button-primary-bg-hover: color-mix(in srgb, var(--semantic-color-primary) 10%, transparent); // subtle tint on hover (outline)
+  --component-button-primary-border-hover: var(--semantic-color-state-hover-primary);
+
+  // BUTTON: PRIMARY FILLED
+  // ================================================
+  --component-button-primary-filled-color: var(--semantic-color-text-inverse);
+  --component-button-primary-filled-bg: var(--semantic-color-primary);
+  --component-button-primary-filled-border: var(--semantic-color-primary);
+  --component-button-primary-filled-color-hover: var(--semantic-color-text-inverse);
+  --component-button-primary-filled-bg-hover: var(--semantic-color-state-hover-primary);
+  --component-button-primary-filled-border-hover: var(--semantic-color-state-hover-primary);
+
+  // BUTTON: SECONDARY
+  // ================================================
+  --component-button-secondary-color: var(--semantic-color-secondary);
+  --component-button-secondary-bg: transparent;
+  --component-button-secondary-border: var(--semantic-color-secondary);
+  --component-button-secondary-color-hover: var(--semantic-color-state-hover-secondary);
+  --component-button-secondary-bg-hover: color-mix(in srgb, var(--semantic-color-secondary) 10%, transparent); // subtle tint on hover (outline)
+  --component-button-secondary-border-hover: var(--semantic-color-state-hover-secondary);
+
+  // BUTTON: SECONDARY FILLED
+  // ================================================
+  --component-button-secondary-filled-color: var(--semantic-color-text-inverse);
+  --component-button-secondary-filled-bg: var(--semantic-color-secondary);
+  --component-button-secondary-filled-border: var(--semantic-color-secondary);
+  --component-button-secondary-filled-color-hover: var(--semantic-color-text-inverse);
+  --component-button-secondary-filled-bg-hover: var(--semantic-color-state-hover-secondary);
+  --component-button-secondary-filled-border-hover: var(--semantic-color-state-hover-secondary);
+
+  // BUTTON: TERTIARY
+  // ================================================
+  --component-button-tertiary-color: var(--semantic-color-tertiary);
+  --component-button-tertiary-bg: transparent;
+  --component-button-tertiary-border: var(--semantic-color-tertiary);
+  --component-button-tertiary-color-hover: var(--semantic-color-state-hover-tertiary);
+  --component-button-tertiary-bg-hover: color-mix(in srgb, var(--semantic-color-tertiary) 10%, transparent); // subtle tint on hover (outline)
+  --component-button-tertiary-border-hover: var(--semantic-color-state-hover-tertiary);
+
+  // BUTTON: TERTIARY FILLED
+  // ================================================
+  --component-button-tertiary-filled-color: var(--semantic-color-text-inverse);
+  --component-button-tertiary-filled-bg: var(--semantic-color-tertiary);
+  --component-button-tertiary-filled-border: var(--semantic-color-tertiary);
+  --component-button-tertiary-filled-color-hover: var(--semantic-color-text-inverse);
+  --component-button-tertiary-filled-bg-hover: var(--semantic-color-state-hover-tertiary);
+  --component-button-tertiary-filled-border-hover: var(--semantic-color-state-hover-tertiary);
+
+  // BUTTON: QUATERNARY
+  // ================================================
+  --component-button-quaternary-color: var(--semantic-color-quaternary);
+  --component-button-quaternary-bg: transparent;
+  --component-button-quaternary-border: var(--semantic-color-quaternary);
+  --component-button-quaternary-color-hover: var(--semantic-color-state-hover-quaternary);
+  --component-button-quaternary-bg-hover: color-mix(in srgb, var(--semantic-color-quaternary) 10%, transparent); // subtle tint on hover (outline)
+  --component-button-quaternary-border-hover: var(--semantic-color-state-hover-quaternary);
+
+  // BUTTON: QUATERNARY FILLED
+  // ================================================
+  --component-button-quaternary-filled-color: var(--semantic-color-text-inverse);
+  --component-button-quaternary-filled-bg: var(--semantic-color-quaternary);
+  --component-button-quaternary-filled-border: var(--semantic-color-quaternary);
+  --component-button-quaternary-filled-color-hover: var(--semantic-color-text-inverse);
+  --component-button-quaternary-filled-bg-hover: var(--semantic-color-state-hover-quaternary);
+  --component-button-quaternary-filled-border-hover: var(--semantic-color-state-hover-quaternary);
+
+  // BUTTON: SPACING
+  // ================================================
+  --component-button-padding-x: var(--semantic-space-component-md);
+  --component-button-padding-y: var(--semantic-space-component-sm);
+  --component-button-gap: var(--semantic-space-inline-sm);
+
+  // BUTTON: TYPOGRAPHY
+  // ================================================
+  --component-button-font-family: var(--semantic-font-family-primary-bold);
+  --component-button-font-size: var(--semantic-font-size-body);
+  --component-button-line-height: var(--semantic-line-height-snug);
+
+  // BUTTON: BORDER
+  // ================================================
+  --component-button-border-width: var(--semantic-border-width-default);
+  --component-button-border-radius: var(--semantic-border-radius-default);
+
+  // BUTTON: STATES
+  // ================================================
+  --component-button-shadow-focus: var(--semantic-shadow-focus);
+
+  // BUTTON: SIZES
+  // ================================================
+  // Accessibility floor: sm text ~1.25rem (20px). Scale: Major Third, 1 step per size.
+
+  // Small  - compact, readable (inline actions, tags)
+  --component-button-size-sm-y: 0.125rem; // 2px vertical - bare minimum, very compact
+  --component-button-size-sm-x: 0.625rem; // 10px horizontal
+  --component-button-font-size-sm: var(--primitive-font-size-md); // clamp(1.25-1.406rem) approx 20-22px
+
+  // Medium - comfortable, default UI button (x2.5 from sm)
+  --component-button-size-md-y: 0.625rem; // 10px vertical  (x2.5 from sm)
+  --component-button-size-md-x: 1.5rem; // 24px horizontal (x2 from sm)
+  --component-button-font-size-md: var(--primitive-font-size-lg); // clamp(1.563-1.758rem) approx 25-28px
+
+  // Large  - prominent CTA, hero buttons (x2.5 from md)
+  --component-button-size-lg-y: 2rem; // 32px vertical  (x3.2 from md)
+  --component-button-size-lg-x: 3.5rem; // 56px horizontal (x2.33 from md)
+  --component-button-font-size-lg: var(--primitive-font-size-xl); // clamp(1.953-2.197rem) approx 31-35px
+
+  // Legacy aliases (keep for backward compat)
+  --component-button-size-sm: var(--component-button-size-sm-y);
+  --component-button-size-md: var(--component-button-size-md-y);
+  --component-button-size-lg: var(--component-button-size-lg-y);
+
+}

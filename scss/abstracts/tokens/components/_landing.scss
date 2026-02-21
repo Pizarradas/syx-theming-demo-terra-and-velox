@@ -1,0 +1,108 @@
+// COMPONENT TOKENS: LANDING
+// ================================================
+// Tokens for org-landing-* and mol-landing-* organisms.
+// All values reference semantic tokens — never primitives directly.
+// ================================================
+
+:root {
+
+    // LANDING: LAYOUT
+    // ================================================
+    --component-landing-container-max: var(--layout-max-width, 75rem);
+    --component-landing-section-padding-y: var(--semantic-space-layout-xl);
+    --component-landing-section-padding-x: var(--semantic-space-layout-md);
+
+    // LANDING: NAVBAR
+    // ================================================
+    --component-landing-navbar-bg: var(--semantic-color-bg-secondary);
+    --component-landing-navbar-border: var(--semantic-color-border-subtle);
+
+    // LANDING: HERO
+    // ================================================
+    --component-landing-hero-bg: var(--semantic-color-bg-primary);
+    --component-landing-hero-min-height: 88svh;
+    --component-landing-hero-padding-y: clamp(4rem, 8vw, 7rem);
+    --component-landing-hero-heading-size: var(--primitive-fluid-font-h1, clamp(2.5rem, 6vw, 4.5rem));
+    --component-landing-hero-lead-size: clamp(1.1rem, 2.5vw, 1.25rem);
+    --component-landing-hero-pill-bg: color-mix(in srgb, var(--semantic-color-primary) 12%, transparent);
+    --component-landing-hero-pill-color: var(--semantic-color-primary);
+    --component-landing-hero-accent-color: var(--semantic-color-primary);
+    --component-landing-hero-avatar-bg: var(--semantic-color-primary);
+    --component-landing-hero-avatar-color: var(--semantic-color-text-inverse);
+
+    // LANDING: STATS BAR
+    // ================================================
+    --component-landing-stats-bg: var(--semantic-color-bg-secondary);
+    --component-landing-stats-border: var(--semantic-color-border-subtle);
+    --component-landing-stats-number-size: var(--primitive-fluid-font-h2, clamp(2rem, 4vw, 3rem));
+    --component-landing-stats-number-color: var(--semantic-color-primary);
+    --component-landing-stats-label-color: var(--semantic-color-text-secondary);
+
+    // LANDING: SECTION HEAD
+    // ================================================
+    --component-landing-section-tag-bg: color-mix(in srgb, var(--semantic-color-primary) 12%, transparent);
+    --component-landing-section-tag-color: var(--semantic-color-primary);
+    --component-landing-section-tag-radius: var(--semantic-border-radius-pill, 999px);
+    --component-landing-section-title-size: var(--primitive-fluid-font-h2, clamp(2rem, 4vw, 3rem));
+
+    // LANDING: FEATURE CARD (molecule)
+    // ================================================
+    --component-landing-card-bg: var(--semantic-color-bg-primary);
+    --component-landing-card-border: var(--semantic-color-border-subtle);
+    --component-landing-card-border-hover: var(--semantic-color-primary);
+    --component-landing-card-radius: var(--semantic-border-radius-lg);
+    --component-landing-card-padding: var(--semantic-space-component-xl, 2rem);
+    --component-landing-card-shadow: var(--semantic-shadow-sm);
+    --component-landing-card-icon-size: 3.5rem;
+    --component-landing-card-icon-font-size: 1.75rem;
+    --component-landing-card-icon-bg: color-mix(in srgb, var(--semantic-color-primary) 12%, transparent);
+    --component-landing-card-icon-color: var(--semantic-color-primary);
+    --component-landing-card-icon-radius: var(--semantic-border-radius-default);
+    --component-landing-card-shadow-hover: var(--semantic-shadow-md);
+
+    // LANDING: PLAN CARD (molecule)
+    // ================================================
+    --component-landing-plan-bg: var(--semantic-color-bg-primary);
+    --component-landing-plan-featured-bg: var(--semantic-color-bg-tertiary);
+    --component-landing-plan-border: var(--semantic-color-border-subtle);
+    --component-landing-plan-border-featured: var(--semantic-color-primary);
+    --component-landing-plan-radius: var(--semantic-border-radius-lg);
+    --component-landing-plan-padding: var(--semantic-space-component-xl, 2rem);
+    --component-landing-plan-price-size: var(--primitive-fluid-font-h2, clamp(2rem, 3vw, 2.75rem));
+    --component-landing-plan-price-color: var(--semantic-color-primary);
+    --component-landing-plan-badge-bg: var(--semantic-color-primary);
+    --component-landing-plan-badge-color: var(--semantic-color-text-inverse);
+    --component-landing-plan-badge-radius: var(--semantic-border-radius-pill, 999px);
+    --component-landing-plan-cta-bg: color-mix(in srgb, var(--semantic-color-primary) 12%, transparent);
+    --component-landing-plan-cta-color: var(--semantic-color-primary);
+    --component-landing-plan-cta-border: color-mix(in srgb, var(--semantic-color-primary) 30%, transparent);
+
+    // LANDING: TESTIMONIAL (molecule)
+    // ================================================
+    --component-landing-testimonial-bg: var(--semantic-color-bg-primary);
+    --component-landing-testimonial-border: var(--semantic-color-border-subtle);
+    --component-landing-testimonial-radius: var(--semantic-border-radius-lg);
+    --component-landing-testimonial-padding: var(--semantic-space-component-xl, 2rem);
+    --component-landing-testimonial-star: var(--semantic-color-primary);
+    --component-landing-testimonial-avatar-bg: var(--semantic-color-primary);
+    --component-landing-testimonial-avatar-color: var(--semantic-color-text-inverse);
+    --component-landing-testimonial-min-height: 14rem;
+
+    // LANDING: CTA BAND
+    // ================================================
+    --component-landing-cta-bg: var(--semantic-color-primary);
+    --component-landing-cta-color: var(--semantic-color-text-inverse);
+    --component-landing-cta-padding-y: var(--semantic-space-layout-xl);
+    --component-landing-cta-btn-inverse-color: var(--semantic-color-primary);
+    --component-landing-cta-btn-inverse-bg: var(--semantic-color-text-inverse);
+    --component-landing-cta-btn-inverse-hover-bg: color-mix(in srgb, var(--semantic-color-text-inverse) 88%, transparent);
+
+    // LANDING: FOOTER
+    // ================================================
+    --component-landing-footer-bg: var(--semantic-color-bg-secondary);
+    --component-landing-footer-border: var(--semantic-color-border-subtle);
+    --component-landing-footer-padding-y: var(--semantic-space-layout-xl);
+    --component-landing-footer-col-gap: var(--semantic-space-layout-lg);
+    --component-landing-footer-link-color: var(--semantic-color-text-secondary);
+    --component-landing-footer-link-hover: var(--semantic-color-primary);
+}
