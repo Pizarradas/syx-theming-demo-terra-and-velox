@@ -1,0 +1,91 @@
+// CORE
+// ===============================================
+@use "../abstracts/index" as *;
+// ===============================================
+
+// PAGE BUNDLE: landing-brand
+// ===============================================
+// Page-level composition for VELOX and TERRA
+// marketing landing pages.
+//
+// Organisms  → organisms/_landing.scss         (org-landing-*)
+// Molecules  → molecules/_landing.scss         (mol-landing-*)
+//
+// This file owns:
+//   - .page-landing-*  Page-layout composition classes
+//     (document root, main-content area, section wrappers)
+//   - .syx body-class defaults (page-scope only)
+// ===============================================
+
+@mixin page-landing-brand($theme: null) {
+
+    // ─────────────────────────────────────────────
+    // ROOT: .syx body-class — page defaults
+    // ─────────────────────────────────────────────
+    .syx {
+        background-color: var(--semantic-color-bg-primary);
+        color: var(--semantic-color-text-primary);
+        font-family: var(--semantic-font-family-primary);
+    }
+
+
+    // ─────────────────────────────────────────────
+    // PAGE: page-landing
+    // Outer page wrapper. Applied to <body> or the
+    // outermost container element of the page.
+    // ─────────────────────────────────────────────
+    .page-landing {
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh;
+    }
+
+
+    // ─────────────────────────────────────────────
+    // PAGE: page-landing__main
+    // <main id="main-content"> content area.
+    // Grows to fill space between navbar and footer.
+    // ─────────────────────────────────────────────
+    .page-landing__main {
+        flex: 1 0 auto;
+        max-width: 100%;
+        padding: 0;
+    }
+
+
+    // ─────────────────────────────────────────────
+    // PAGE: page-landing__section
+    // Generic page-level section wrapper.
+    // Controls horizontal padding and max-width
+    // containment at the page boundary.
+    // (Organism-specific padding lives in org-* files.)
+    // ─────────────────────────────────────────────
+    .page-landing__section {
+        width: 100%;
+    }
+
+
+    // ─────────────────────────────────────────────
+    // SKIP LINK — accessibility, page-scope only
+    // ─────────────────────────────────────────────
+    .syx-skip-link {
+        position: absolute;
+        top: -100%;
+        left: var(--semantic-space-component-sm);
+        background: var(--semantic-color-primary);
+        color: var(--semantic-color-text-inverse);
+        padding: var(--semantic-space-component-sm) var(--semantic-space-component-md);
+        border-radius: var(--semantic-border-radius-default);
+        font-weight: var(--semantic-font-weight-bold);
+        text-decoration: none;
+        z-index: 9999;
+        @include transition(top 0.2s ease);
+
+        &:focus {
+            top: var(--semantic-space-component-sm);
+        }
+    }
+
+}
+
+// end @mixin page-landing-brand

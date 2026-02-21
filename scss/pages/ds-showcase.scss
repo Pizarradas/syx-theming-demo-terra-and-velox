@@ -1,0 +1,94 @@
+// CORE
+// ===============================================
+@use "../abstracts/index" as *;
+// ===============================================
+
+// PAGE BUNDLE: ds-showcase
+// ===============================================
+// Page-level composition for the design system
+// showcase page (ds-system.html).
+//
+// Organisms  → organisms/_ds-showcase.scss     (org-ds-*)
+// Molecules  → molecules/_ds-showcase.scss     (mol-ds-*)
+//
+// This file owns:
+//   - .page-ds-*  Page-layout composition classes
+//     (document root, main-content area, section spacing)
+//   - .syx body-class defaults (page-scope only)
+// ===============================================
+
+@mixin page-ds-showcase($theme: null) {
+
+    // ─────────────────────────────────────────────
+    // ROOT: .syx body-class — page defaults
+    // ─────────────────────────────────────────────
+    .syx {
+        background-color: var(--semantic-color-bg-secondary);
+        color: var(--semantic-color-text-primary);
+        font-family: var(--semantic-font-family-primary);
+    }
+
+
+    // ─────────────────────────────────────────────
+    // PAGE: page-ds
+    // Outer page wrapper for the design-system
+    // showcase page.
+    // ─────────────────────────────────────────────
+    .page-ds {
+        display: flex;
+        flex-direction: column;
+        min-height: 100dvh;
+    }
+
+
+    // ─────────────────────────────────────────────
+    // PAGE: page-ds__main
+    // <main> content area.
+    // Grows to fill space between navbar and footer.
+    // ─────────────────────────────────────────────
+    .page-ds__main {
+        flex: 1 0 auto;
+        padding: var(--semantic-space-layout-xl) 0;
+    }
+
+
+    // ─────────────────────────────────────────────
+    // PAGE: page-ds__section
+    // Generic full-width section divider within the
+    // DS showcase. Adds consistent vertical rhythm
+    // between component preview blocks.
+    // ─────────────────────────────────────────────
+    .page-ds__section {
+        padding-bottom: var(--semantic-space-layout-xl);
+
+        &+& {
+            padding-top: var(--semantic-space-layout-lg);
+            border-top: 1px solid var(--semantic-color-border-subtle);
+        }
+    }
+
+
+    // ─────────────────────────────────────────────
+    // SKIP LINK — accessibility, page-scope only
+    // ─────────────────────────────────────────────
+    .syx-skip-link {
+        position: absolute;
+        top: -100%;
+        left: var(--semantic-space-component-sm);
+        background: var(--semantic-color-primary);
+        color: var(--semantic-color-text-inverse);
+        padding: var(--semantic-space-component-sm) var(--semantic-space-component-md);
+        border-radius: var(--semantic-border-radius-default);
+        font-weight: var(--semantic-font-weight-bold);
+        text-decoration: none;
+        z-index: 9999;
+        @include transition(top 0.2s ease);
+
+        &:focus {
+            top: var(--semantic-space-component-sm);
+        }
+    }
+
+}
+
+// end @mixin page-ds-showcase

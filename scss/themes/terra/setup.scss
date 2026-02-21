@@ -1,0 +1,106 @@
+// SYX — THEME: terra | BUNDLE: setup (full system)
+// ================================================
+// Full design system compilation for TERRA brand.
+// Includes: all atoms, molecules, organisms, utilities,
+// grid, helpers, reset, and theme tokens.
+//
+// PREPROS: output to css/styles-theme-terra.css
+// ================================================
+
+// CORE SCSS modules
+@use '../../abstracts/index' as *;
+@use '../../base/index' as *;
+@use '../../layout/grids/grid' as *;
+@use '../../atoms/index' as *;
+@use '../../molecules/index' as *;
+@use '../../organisms/index' as *;
+@use '../_base/universal' as *;
+@use 'theme' as *;
+
+// PAGE: landing brand organisms
+@use '../../pages/landing-brand' as *;
+@use '../../pages/ds-showcase' as *;
+
+// ================================================
+// LAYER ORDER — cascade specificity for the system
+// ================================================
+@layer syx.reset, syx.base, syx.tokens, syx.atoms, syx.molecules, syx.organisms, syx.utilities;
+
+// THEME TOKENS
+// ================================================
+@include universal-values();
+@include theme-terra();
+
+// RESET: global
+// ================================================
+@include resets-global(terra);
+
+// HELPERS
+// ================================================
+@include helper-animations();
+@include helper-positioning();
+@include helper-hides();
+@include helper-displays();
+@include helper-alignments();
+@include helper-images();
+@include helper-embedded();
+@include helper-maps();
+@include helper-objects();
+@include helper-texts();
+@include helper-links();
+@include helper-icons();
+
+// LAYOUT: grid
+// ================================================
+@include layout-grid(terra);
+
+// HELPERS: theme utilities
+// ================================================
+@include helper-font-sizes(terra);
+@include helper-dimensions(terra);
+@include helper-spacer(terra);
+@include helper-gap(terra);
+@include helper-fonts(terra);
+@include helper-backgrounds(terra);
+
+// ATOMS
+// ================================================
+@include atom-breadcrumb(terra);
+@include atom-btn(terra);
+@include atom-pill(terra);
+@include atom-check(terra);
+@include atom-form(terra);
+@include atom-icon(terra);
+@include atom-label(terra);
+@include atom-link(terra);
+@include atom-list(terra);
+@include atom-pagination(terra);
+@include atom-radio(terra);
+@include atom-switch(terra);
+@include atom-table(terra);
+@include atom-title(terra);
+@include atom-txt(terra);
+
+// MOLECULES
+// ================================================
+@include mol-card(terra);
+@include mol-form-field(terra);
+@include mol-btn-group(terra);
+@include mol-label-group(terra);
+@include mol-form-field-set(terra);
+@include mol-landing(terra);
+@include mol-ds-showcase(terra);
+@include mol-docs(terra);
+
+// ORGANISMS
+// ================================================
+@include org-navbar(terra);
+@include org-header(terra);
+@include org-landing(terra);
+@include org-ds-showcase(terra);
+@include org-docs(terra);
+
+// PAGE BUNDLES
+// ================================================
+@include page-landing-brand(terra);
+@include page-ds-showcase(terra);

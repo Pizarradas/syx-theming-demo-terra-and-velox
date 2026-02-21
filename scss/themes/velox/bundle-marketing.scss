@@ -1,0 +1,48 @@
+// SYX — THEME: velox | BUNDLE: marketing
+// ================================================
+// Landing pages and promotional content for VELOX.
+// Dark SaaS/Tech identity.
+// ================================================
+// PREPROS: output to css/brand-velox.css
+// ================================================
+
+// CORE SCSS modules
+@use '../../abstracts/index' as *;
+@use '../../base/index' as *;
+@use '../../layout/grids/grid' as *;
+@use '../../atoms/index' as *;
+@use '../../molecules/index' as *;
+@use '../../organisms/index' as *;
+@use '../_base/universal' as *;
+@use '../_shared/core' as *;
+@use '../_shared/bundle-marketing' as *;
+@use 'theme' as *;
+
+// PAGE: landing brand organisms (new)
+@use '../../pages/landing-brand' as *;
+@use '../../pages/ds-showcase' as *;
+
+// THEME TOKENS
+// ================================================
+@include universal-values();
+@include theme-velox();
+
+// FONTS (loaded via Google Fonts in HTML <head> for this exercise)
+// Note: If fonts are local, use @include font-family() here instead.
+// Space Grotesk and Inter are loaded from CDN in the HTML.
+
+// CORE (reset + helpers + grid)
+// ================================================
+@include syx-core(velox);
+
+// BUNDLE: marketing components
+// ================================================
+@include syx-bundle-marketing(velox);
+
+// BUNDLE: landing brand page organisms
+// ================================================
+@include syx-bundle-landing-brand(velox);
+
+// DS SHOWCASE organisms (for ds-system.html only)
+// ================================================
+@include syx-bundle-ds-showcase(velox);

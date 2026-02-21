@@ -1,0 +1,221 @@
+// ================================================
+// VELOX THEME — COMPLETE TOKEN DEFINITION
+// ================================================
+// SYX Design System — Dual Brand Exercise
+// VELOX: B2B SaaS / Tech — Dark, precise, electric
+// ================================================
+
+@use '../../abstracts/index' as *;
+
+@mixin theme-velox {
+    :root {
+
+        // ================================================
+        // SECTION 1 — BRAND PRIMITIVES
+        // ================================================
+
+        // Spacing base (4px grid — tight, precise)
+        --primitive-space-base: 0.25rem;
+
+        // Colors — VELOX electric cyan palette
+        --primitive-color-cyan-500: #6EE7F7; // Primary — electric cyan
+        --primitive-color-cyan-400: #A5F3FC; // Primary lighter — hover surfaces
+        --primitive-color-cyan-600: #22D3EE; // Primary darker — pressed
+        --primitive-color-cyan-50: #0C2D35; // Primary tint — dark bg surfaces
+
+        // Secondary — Electric blue-violet
+        --primitive-color-blue-500: #818CF8; // Secondary — indigo glow
+        --primitive-color-blue-400: #A5B4FC; // Secondary lighter
+        --primitive-color-blue-50: #1E1B4B; // Secondary tint bg
+
+        // Accent — Energy yellow (for stars & highlights)
+        --primitive-color-orange-500: #FACC15; // Accent — energy yellow
+
+        // Backgrounds — near-black stack
+        --primitive-color-gray-900: #070710; // bg-primary — deep space black
+        --primitive-color-gray-800: #0D0D1A; // bg-secondary — slightly lighter
+        --primitive-color-gray-700: #131326; // bg-tertiary — card surface
+        --primitive-color-gray-600: #1D1D35; // bg-elevated — hover surface
+
+        // Text — light on dark
+        --primitive-color-white: #F0F4F8; // text-primary — warm white
+        --primitive-color-gray-300: #94A3B8; // text-secondary — slate
+        --primitive-color-gray-400: #475569; // text-tertiary — muted slate
+
+        // Borders
+        --primitive-color-gray-500: #1E293B; // border-subtle
+        --primitive-color-gray-200: #334155; // border-default
+        --primitive-color-gray-100: #475569; // border-strong
+
+        // States
+        --primitive-color-success-500: #22C55E;
+        --primitive-color-error-500: #EF4444;
+        --primitive-color-warning-500: #F59E0B;
+        --primitive-color-disabled: #334155;
+
+        // Typography
+        --primitive-font-family-velox-heading: "Google-Space-Grotesk--bold", "Space Grotesk", Arial, sans-serif;
+        --primitive-font-family-velox-body: "Google-Inter--regular", "Inter", -apple-system, sans-serif;
+        --primitive-font-family-velox-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+        // ================================================
+        // SECTION 2 — THEME VARIABLES (legacy SYX bindings)
+        // ================================================
+
+        --base-measure: var(--primitive-space-base);
+
+        // Legacy color bindings
+        --color-primary: var(--primitive-color-cyan-500);
+        --color-secondary: var(--primitive-color-blue-500);
+        --color-accent: var(--primitive-color-orange-500);
+        --color-state-ok: var(--primitive-color-success-500);
+        --color-state-ko: var(--primitive-color-error-500);
+        --color-state-warning: var(--primitive-color-warning-500);
+        --color-state-disabled: var(--primitive-color-disabled);
+        --color-state-focus: var(--primitive-color-cyan-500);
+        --color-state-hover-primary: var(--primitive-color-cyan-400);
+
+        // Legacy font bindings
+        --font-weight-1: var(--primitive-font-family-velox-body);
+        --font-weight-2: var(--primitive-font-family-velox-heading);
+        --font-bold: var(--primitive-font-family-velox-heading);
+
+        // Layout
+        --layout-max-width: calc(320 * var(--base-measure)); // 1280px
+        --layout-pad-1: calc(2 * var(--base-measure));
+        --layout-gap-1: calc(1 * var(--base-measure));
+
+        // Theme shape — sharp, precise
+        --theme-radius: calc(1 * var(--base-measure)); // 4px
+        --theme-focus: 0 0 0 3px color-mix(in srgb, var(--color-primary) 30%, transparent);
+        --theme-w-border: calc(0.4 * var(--base-measure));
+
+        // Buttons
+        --btn-primary-font-color: var(--primitive-color-gray-900);
+        --btn-primary-filled-font-color: var(--primitive-color-gray-900); // dark text on cyan
+
+        // Forms
+        --form-font-family: var(--primitive-font-family-velox-body);
+        --form-height-size: calc(6 * var(--base-measure));
+
+        // ================================================
+        // SECTION 3 — SEMANTIC TOKEN OVERRIDES
+        // ================================================
+
+        // Brand colors
+        --semantic-color-primary: var(--primitive-color-cyan-500);
+        --semantic-color-secondary: var(--primitive-color-blue-500);
+        --semantic-color-tertiary: var(--primitive-color-orange-500);
+
+        // Backgrounds (dark stack)
+        --semantic-color-bg-primary: var(--primitive-color-gray-900);
+        --semantic-color-bg-secondary: var(--primitive-color-gray-800);
+        --semantic-color-bg-tertiary: var(--primitive-color-gray-700);
+        --semantic-color-bg-elevated: var(--primitive-color-gray-600);
+
+        // Text
+        --semantic-color-text-primary: var(--primitive-color-white);
+        --semantic-color-text-secondary: var(--primitive-color-gray-300);
+        --semantic-color-text-tertiary: var(--primitive-color-gray-400);
+        --semantic-color-text-inverse: var(--primitive-color-gray-900);
+
+        // Borders
+        --semantic-color-border-subtle: var(--primitive-color-gray-500);
+        --semantic-color-border-default: var(--primitive-color-gray-200);
+        --semantic-color-border-strong: var(--primitive-color-gray-100);
+        --semantic-color-border-focus: var(--primitive-color-cyan-500);
+
+        // States
+        --semantic-color-state-ok: var(--primitive-color-success-500);
+        --semantic-color-state-ko: var(--primitive-color-error-500);
+        --semantic-color-state-warning: var(--primitive-color-warning-500);
+        --semantic-color-state-disabled: var(--primitive-color-disabled);
+        --semantic-color-state-focus: var(--primitive-color-cyan-500);
+        --semantic-color-state-hover-primary: var(--primitive-color-cyan-400);
+        --semantic-color-state-hover-secondary: var(--primitive-color-blue-400);
+
+        // Hover / hover states for legacy
+        --color-state-hover-primary: var(--primitive-color-cyan-400);
+
+        // Shadow
+        --semantic-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.4);
+        --semantic-shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4);
+        --semantic-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.5);
+        --semantic-shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+        --semantic-shadow-focus: 0 0 0 3px color-mix(in srgb, var(--primitive-color-cyan-500) 30%, transparent);
+
+        // Typography
+        --semantic-font-family-primary: var(--primitive-font-family-velox-body);
+        --semantic-font-family-primary-bold: var(--primitive-font-family-velox-heading);
+        --semantic-font-family-heading: var(--primitive-font-family-velox-heading);
+        --semantic-font-family-mono: var(--primitive-font-family-velox-mono);
+        --semantic-font-weight-bold: 700;
+        --semantic-font-weight-medium: 500;
+
+        // Border radius — sharp (4px / 6px)
+        --semantic-border-radius-sm: calc(0.5 * var(--base-measure)); // 2px
+        --semantic-border-radius-default: calc(1 * var(--base-measure)); // 4px
+        --semantic-border-radius-lg: calc(1.5 * var(--base-measure)); // 6px
+        --semantic-border-radius-full: calc(1.5 * var(--base-measure)); // no pills
+        --semantic-border-radius-circle: 9999px;
+
+        // Links
+        --semantic-color-link-default: var(--primitive-color-cyan-500);
+        --semantic-color-link-hover: var(--primitive-color-cyan-400);
+        --semantic-color-link-visited: var(--primitive-color-blue-400);
+        --semantic-color-link-active: var(--primitive-color-cyan-600);
+
+        // Placeholder
+        --semantic-color-placeholder: var(--primitive-color-gray-400);
+
+        // Component: button
+        --component-button-border-radius: calc(1 * var(--base-measure));
+        --component-button-border-width: 2px;
+        --component-button-font-family: var(--primitive-font-family-velox-heading);
+        --component-button-font-size: var(--primitive-font-size-lg); // approx 25px - default (no size modifier)
+        --component-button-font-size-sm: var(--primitive-font-size-md); // step+1 approx 20px - sm
+        --component-button-font-size-md: var(--primitive-font-size-lg); // step+2 approx 25px - md
+        --component-button-font-size-lg: var(--primitive-font-size-xl); // step+3 approx 31px - lg
+        --component-button-line-height: 1;
+        --component-button-size-sm: calc(1.25 * var(--base-measure));
+        --component-button-size-md: calc(1.75 * var(--base-measure));
+        --component-button-size-lg: calc(2.25 * var(--base-measure));
+
+        // Primary button
+        --component-button-primary-color: var(--primitive-color-cyan-500);
+        --component-button-primary-filled-bg: var(--primitive-color-cyan-500);
+        --component-button-primary-filled-color: var(--primitive-color-gray-900);
+        --component-button-primary-bg-hover: transparent;
+        --component-button-primary-color-hover: var(--primitive-color-cyan-400);
+        --component-button-primary-border-hover: var(--primitive-color-cyan-400);
+        --component-button-primary-filled-bg-hover: var(--primitive-color-cyan-400);
+        --component-button-primary-filled-color-hover: var(--primitive-color-gray-900);
+        --component-button-primary-filled-border-hover: var(--primitive-color-cyan-400);
+
+        // Secondary button
+        --component-button-secondary-color: var(--primitive-color-blue-500);
+        --component-button-secondary-filled-bg: var(--primitive-color-blue-500);
+        --component-button-secondary-filled-color: var(--primitive-color-gray-900);
+        --component-button-secondary-bg-hover: transparent;
+        --component-button-secondary-color-hover: var(--primitive-color-blue-400);
+        --component-button-secondary-border-hover: var(--primitive-color-blue-400);
+        --component-button-secondary-filled-bg-hover: var(--primitive-color-blue-400);
+        --component-button-secondary-filled-color-hover: var(--primitive-color-white);
+        --component-button-secondary-filled-border-hover: var(--primitive-color-blue-400);
+
+        // Tertiary (ghost)
+        --component-button-tertiary-color: var(--primitive-color-gray-300);
+        --component-button-tertiary-filled-bg: transparent;
+        --component-button-tertiary-filled-color: var(--primitive-color-white);
+        --component-button-tertiary-bg-hover: var(--primitive-color-gray-700);
+        --component-button-tertiary-color-hover: var(--primitive-color-white);
+        --component-button-tertiary-border-hover: var(--primitive-color-gray-100);
+        --component-button-tertiary-filled-bg-hover: var(--primitive-color-gray-700);
+        --component-button-tertiary-filled-color-hover: var(--primitive-color-white);
+        --component-button-tertiary-filled-border-hover: var(--primitive-color-gray-100);
+
+        // Navbar
+        --component-header-height: 3.5rem;
+        --component-header-z-index: 100;
+    }
+}

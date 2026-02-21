@@ -1,0 +1,106 @@
+// SYX — THEME: velox | BUNDLE: setup (full system)
+// ================================================
+// Full design system compilation for VELOX brand.
+// Includes: all atoms, molecules, organisms, utilities,
+// grid, helpers, reset, and theme tokens.
+//
+// PREPROS: output to css/styles-theme-velox.css
+// ================================================
+
+// CORE SCSS modules
+@use '../../abstracts/index' as *;
+@use '../../base/index' as *;
+@use '../../layout/grids/grid' as *;
+@use '../../atoms/index' as *;
+@use '../../molecules/index' as *;
+@use '../../organisms/index' as *;
+@use '../_base/universal' as *;
+@use 'theme' as *;
+
+// PAGE: landing brand organisms
+@use '../../pages/landing-brand' as *;
+@use '../../pages/ds-showcase' as *;
+
+// ================================================
+// LAYER ORDER — cascade specificity for the system
+// ================================================
+@layer syx.reset, syx.base, syx.tokens, syx.atoms, syx.molecules, syx.organisms, syx.utilities;
+
+// THEME TOKENS
+// ================================================
+@include universal-values();
+@include theme-velox();
+
+// RESET: global
+// ================================================
+@include resets-global(velox);
+
+// HELPERS
+// ================================================
+@include helper-animations();
+@include helper-positioning();
+@include helper-hides();
+@include helper-displays();
+@include helper-alignments();
+@include helper-images();
+@include helper-embedded();
+@include helper-maps();
+@include helper-objects();
+@include helper-texts();
+@include helper-links();
+@include helper-icons();
+
+// LAYOUT: grid
+// ================================================
+@include layout-grid(velox);
+
+// HELPERS: theme utilities
+// ================================================
+@include helper-font-sizes(velox);
+@include helper-dimensions(velox);
+@include helper-spacer(velox);
+@include helper-gap(velox);
+@include helper-fonts(velox);
+@include helper-backgrounds(velox);
+
+// ATOMS
+// ================================================
+@include atom-breadcrumb(velox);
+@include atom-btn(velox);
+@include atom-pill(velox);
+@include atom-check(velox);
+@include atom-form(velox);
+@include atom-icon(velox);
+@include atom-label(velox);
+@include atom-link(velox);
+@include atom-list(velox);
+@include atom-pagination(velox);
+@include atom-radio(velox);
+@include atom-switch(velox);
+@include atom-table(velox);
+@include atom-title(velox);
+@include atom-txt(velox);
+
+// MOLECULES
+// ================================================
+@include mol-card(velox);
+@include mol-form-field(velox);
+@include mol-btn-group(velox);
+@include mol-label-group(velox);
+@include mol-form-field-set(velox);
+@include mol-landing(velox);
+@include mol-ds-showcase(velox);
+@include mol-docs(velox);
+
+// ORGANISMS
+// ================================================
+@include org-navbar(velox);
+@include org-header(velox);
+@include org-landing(velox);
+@include org-ds-showcase(velox);
+@include org-docs(velox);
+
+// PAGE BUNDLES
+// ================================================
+@include page-landing-brand(velox);
+@include page-ds-showcase(velox);
